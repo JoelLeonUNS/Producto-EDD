@@ -10,6 +10,7 @@ public class MenuMain {
         for (int i = 10; i >0; i--) {
             System.out.println(i);
         }
+        System.out.println("Algo");
     }
     
     
