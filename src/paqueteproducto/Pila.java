@@ -1,4 +1,3 @@
-//listo
 package paqueteproducto;
 
 /**
