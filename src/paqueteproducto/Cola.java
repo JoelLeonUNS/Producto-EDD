@@ -1,17 +1,21 @@
 package paqueteproducto;
 
-public class Colas {
+/**
+ *
+ * @author JOEL
+ */
+public class Cola {
 
-    public String[] arrayCola;
+    public String[] array;
     public int fin;
     public int frente;
     public int n;
 
-    public Colas(String[] arrayCola, int fin, int frente) {
-        this.arrayCola = arrayCola;
+    public Cola(String[] array, int fin, int frente) {
+        this.array = array;
         this.fin = fin;
         this.frente = frente;
-        this.n = arrayCola.length - 1;
+        this.n = array.length - 1;
     }
 
     public void insertar(String x) {
@@ -19,18 +23,20 @@ public class Colas {
             System.out.println("\n¡Cola llena!\n");
         } else {
             fin++;
-            arrayCola[fin] = x;
+            array[fin] = x;
             if (frente == -1) {
                 frente = 0;
             }
         }
     }
 
-    public void suprimir() {
+    public String suprimir() {
+        String x = "";
         if (frente == -1) {
             System.out.println("\n¡Cola vacía!\n");
         } else {
-            arrayCola[frente] = " ";
+            x = array[frente];
+            array[frente] = " ";
             if (frente == fin) {
                 frente = -1;
                 fin = -1;
@@ -38,6 +44,7 @@ public class Colas {
                 frente++;
             }
         }
+        return x; // retorna el valor que saca de la cola
     }
 
 }
