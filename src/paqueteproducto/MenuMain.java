@@ -136,8 +136,8 @@ public class MenuMain {
                         notInf += (x.equals("1") ? "" : x);
                         notInf += (x.equals("1") ? "" : "*");
                         notInf += p.pop();
-                        System.out.print("Ingrese el exponente: ");
-                        exp = String.valueOf(input.next().charAt(0));
+                        System.out.print("Ingrese el exponente n°" + (1+i) + ": ");
+                        exp = input.next();
                         notInf += (exp.equals("1") ? "" : "^");
                         notInf += (exp.equals("1") ? "" : exp);
                         notInf += (i == longitud - 1 ? "" : operador(tipOp));
