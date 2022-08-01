@@ -6,9 +6,9 @@ package paqueteproducto;
  */
 public class Pila {
 
-    public String[] array;
-    public int tope;
-    public int n;
+    private final String[] array;
+    private int tope;
+    private final int n;
 
     public Pila(String[] array, int tope) {
         this.array = array;
@@ -35,6 +35,18 @@ public class Pila {
             tope = tope - 1;
         }
         return x; // retorna el valor que saca de la pila
+    }
+
+    public String[] getArray() {
+        return array;
+    }
+
+    public int getTope() {
+        return tope;
+    }
+
+    public int getN() {
+        return n;
     }
 
 }

@@ -6,10 +6,10 @@ package paqueteproducto;
  */
 public class Cola {
 
-    public String[] array;
-    public int fin;
-    public int frente;
-    public int n;
+    private final String[] array;
+    private int fin;
+    private int frente;
+    private final int n;
 
     public Cola(String[] array, int fin, int frente) {
         this.array = array;
@@ -45,6 +45,22 @@ public class Cola {
             }
         }
         return x; // retorna el valor que saca de la cola
+    }
+
+    public String[] getArray() {
+        return array;
+    }
+
+    public int getFin() {
+        return fin;
+    }
+
+    public int getFrente() {
+        return frente;
+    }
+
+    public int getN() {
+        return n;
     }
 
 }
