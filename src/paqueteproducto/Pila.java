@@ -31,11 +31,11 @@ public class Pila {
             System.out.println("\t==== Pila vacia ====");
         } else {
             x = array[tope];
-            array[tope] = "";
+            array[tope] = "s";
             tope = tope - 1;
         }
         return x; // retorna el valor que saca de la pila
-    }
+    }// x <-- pop();
 
     public String[] getArray() {
         return array;
