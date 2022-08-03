@@ -37,6 +37,18 @@ public class MenuMain {
 
     }
 
+    public static void menuValoresPreestablecidos() {
+
+        // se define el tamaño de la cola y pila
+        String[] cola = {"15", "11", "9", "6", "1"};
+        String[] pila = {"b", "a", "z", "y", "x"};
+        // se crea los obejtos de la clase Cola y Pila
+        Cola c2 = new Cola(cola, 4, 0);
+        Pila p2 = new Pila(pila, 4);
+
+        System.out.println(transformacion(c2, p2, 5, 1, 1));
+    } 
+    
     public static void menuValoresPorTeclado() {
         int longitud, tipOp, tipExp;
 
@@ -67,7 +79,7 @@ public class MenuMain {
             System.out.print("Opción: ");
             tipOp = input.nextInt();
             
-            System.out.println((tipOp < 3 || tipOp > 1) ? "" : "\nError, opción no encontrada.\n");
+            System.out.println((tipOp > 3 || tipOp < 1) ? "\nError, opción no encontrada.\n" : "");
         } while (tipOp > 3 || tipOp < 1);
 
         do {
@@ -77,22 +89,10 @@ public class MenuMain {
             System.out.print("Opción: ");
             tipExp = input.nextInt();
             
-            System.out.println((tipExp < 2 || tipExp > 1) ? "" : "\nError, opción no encontrada.\n");
+            System.out.println((tipExp > 2 || tipExp < 1) ? "\nError, opción no encontrada.\n" : "");
         } while (tipExp > 2 || tipExp < 1);
 
         System.out.println(transformacion(c1, p1, longitud, tipOp, tipExp));
-    }
-
-    public static void menuValoresPreestablecidos() {
-
-        // se define el tamaño de la cola y pila
-        String[] cola = {"15", "11", "9", "6", "1"};
-        String[] pila = {"b", "a", "z", "y", "x"};
-        // se crea los obejtos de la clase Cola y Pila
-        Cola c2 = new Cola(cola, 4, 0);
-        Pila p2 = new Pila(pila, 4);
-
-        System.out.println(transformacion(c2, p2, 5, 1, 1));
     }
 
     public static void llenarColaPila(Cola c, Pila p, int longitud) {
@@ -120,21 +120,21 @@ public class MenuMain {
             case 1 -> { // 15*x
                 for (int i = 0; i < longitud; i++) {
                     x = c.suprimir();
-                    notInf += (x.equals("1") ? "" : x + "*");
+                    notInf += (!x.equals("1") ? x + "*" : "");
                     notInf += p.pop(); // se hace pop y se disminuye en 1 el tope
-                    notInf += ((p.getTope() == -1 || p.getTope() == 0) ? "" : "^" + (p.getTope() + 1)); // por eso se suma 1 al tope
-                    notInf += ((i == longitud - 1) ? "" : operador(tipOp));
+                    notInf += ((p.getTope() > 0) ? "^" + (p.getTope() + 1) : "" ); // por eso se suma 1 al tope
+                    notInf += ((i < longitud - 1) ? operador(tipOp) : "");
                 }
             }
             case 2 -> {
                 for (int i = 0; i < longitud; i++) {
                     x = c.suprimir();
-                    notInf += (x.equals("1") ? "" : x + "*");
+                    notInf += (!x.equals("1") ? x + "*" : "");
                     notInf += p.pop();
                     System.out.print("Ingrese el exponente n°" + (1 + i) + ": ");
                     exp = input.next();
-                    notInf += (exp.equals("1") ? "" : "^" + exp);
-                    notInf += (i == longitud - 1 ? "" : operador(tipOp));
+                    notInf += (!exp.equals("1") ? "^" + exp : "" );
+                    notInf += ((i < longitud - 1) ? operador(tipOp) : "");
                 }
             }
             case 3 -> {
