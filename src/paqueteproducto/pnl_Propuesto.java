@@ -63,7 +63,7 @@ public class pnl_Propuesto extends javax.swing.JPanel {
 
         String[] colaTabla = new String[tamañoPilaCola + 1];
         colaTabla[0] = "Cola";
-        System.arraycopy(pila, 0, colaTabla, 1, cola.length);
+        System.arraycopy(cola, 0, colaTabla, 1, cola.length);
         tablaModeloCola.addRow(colaTabla);
         
         c = new Cola(cola, 4, 0);
