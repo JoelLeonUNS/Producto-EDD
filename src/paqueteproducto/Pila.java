@@ -7,11 +7,13 @@ package paqueteproducto;
 public class Pila {
 
     private final String[] array;
+    private final int fondo;
     private int tope;
     private final int n;
 
     public Pila(String[] array, int tope) {
         this.array = array;
+        this.fondo = 0;
         this.tope = tope;
         this.n = array.length - 1;
     }
@@ -40,7 +42,10 @@ public class Pila {
     public String[] getArray() {
         return array;
     }
-
+    
+    public int getFondo() {
+        return fondo;
+    }
     public int getTope() {
         return tope;
     }
