@@ -1,5 +1,7 @@
 package paqueteproducto;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ANGIE
@@ -20,6 +22,7 @@ public class Pila {
 
     public void push(String x) {
         if (tope >= n) {
+            JOptionPane.showMessageDialog(null, "¡Pila llena!");
             System.out.println("\t==== Pila llena ===");
         } else {
             tope = tope + 1;
@@ -30,6 +33,7 @@ public class Pila {
     public String pop() {
         String x = "";
         if (tope == -1) {
+            JOptionPane.showMessageDialog(null, "¡Pila vacía!");
             System.out.println("\t==== Pila vacia ====");
         } else {
             x = array[tope];

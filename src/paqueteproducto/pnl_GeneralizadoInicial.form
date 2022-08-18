@@ -31,9 +31,9 @@
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="textFld_InsertarPila" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="txtFld_InsertarPila" alignment="0" pref="0" max="32767" attributes="0"/>
                                   <Component id="lbl_Insertar" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="textFld_Tamaño" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="txtFld_Tamaño" alignment="0" pref="0" max="32767" attributes="0"/>
                                   <Component id="lbl_Tamaño" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -44,7 +44,7 @@
                           </Group>
                           <Component id="jSeparator3" max="32767" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="textFld_InsertarCola" pref="0" max="32767" attributes="0"/>
+                              <Component id="txtFld_InsertarCola" pref="0" max="32767" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="btn_InsertarCola" min="-2" pref="75" max="-2" attributes="0"/>
                           </Group>
@@ -54,7 +54,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbl_PilaCola" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Component id="scrll_TablaCola" alignment="0" max="32767" attributes="0"/>
@@ -91,7 +91,7 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="2" attributes="0">
                                   <Component id="btn_Definir" alignment="2" min="-2" pref="40" max="-2" attributes="0"/>
-                                  <Component id="textFld_Tamaño" alignment="2" min="-2" pref="40" max="-2" attributes="0"/>
+                                  <Component id="txtFld_Tamaño" alignment="2" min="-2" pref="40" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jSeparator3" min="-2" pref="4" max="-2" attributes="0"/>
@@ -100,12 +100,12 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="2" attributes="0">
                                   <Component id="btn_InsertarPila" alignment="2" min="-2" pref="40" max="-2" attributes="0"/>
-                                  <Component id="textFld_InsertarPila" alignment="2" min="-2" pref="40" max="-2" attributes="0"/>
+                                  <Component id="txtFld_InsertarPila" alignment="2" min="-2" pref="40" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="2" attributes="0">
                                   <Component id="btn_InsertarCola" alignment="2" min="-2" pref="40" max="-2" attributes="0"/>
-                                  <Component id="textFld_InsertarCola" alignment="2" min="-2" pref="40" max="-2" attributes="0"/>
+                                  <Component id="txtFld_InsertarCola" alignment="2" min="-2" pref="40" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
@@ -114,7 +114,7 @@
                       <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbl_PilaCola" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -197,18 +197,25 @@
         <Property name="text" type="java.lang.String" value="Tama&#xf1;o"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="textFld_Tama&#xf1;o">
+    <Component class="javax.swing.JTextField" name="txtFld_Tama&#xf1;o">
       <Properties>
         <Property name="columns" type="int" value="10"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtFld_Tama&#xf1;oFocusLost"/>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtFld_Tama&#xf1;oKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btn_Definir">
       <Properties>
         <Property name="text" type="java.lang.String" value="DEFINIR"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_DefinirActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator2">
       <Properties>
@@ -226,35 +233,48 @@
         <Property name="text" type="java.lang.String" value="Insetar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="textFld_InsertarPila">
+    <Component class="javax.swing.JTextField" name="txtFld_InsertarPila">
       <Properties>
         <Property name="columns" type="int" value="10"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtFld_InsertarPilaFocusLost"/>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtFld_InsertarPilaKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btn_InsertarPila">
       <Properties>
         <Property name="text" type="java.lang.String" value="PILA"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_InsertarPilaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btn_InsertarCola">
       <Properties>
         <Property name="text" type="java.lang.String" value="COLA"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_InsertarColaActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="textFld_InsertarCola">
+    <Component class="javax.swing.JTextField" name="txtFld_InsertarCola">
       <Properties>
         <Property name="columns" type="int" value="10"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtFld_InsertarColaFocusLost"/>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtFld_InsertarColaKeyReleased"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="scrll_TablaPila">
       <Properties>
-        <Property name="horizontalScrollBarPolicy" type="int" value="31"/>
         <Property name="verticalScrollBarPolicy" type="int" value="21"/>
         <Property name="autoscrolls" type="boolean" value="true"/>
       </Properties>
@@ -272,11 +292,14 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="50" green="50" red="50" type="rgb"/>
             </Property>
-            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="0" rowCount="0"/>
+            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="tablaModeloPila" type="code"/>
             </Property>
             <Property name="autoResizeMode" type="int" value="0"/>
             <Property name="autoscrolls" type="boolean" value="false"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Default Cursor"/>
+            </Property>
             <Property name="enabled" type="boolean" value="false"/>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="requestFocusEnabled" type="boolean" value="false"/>
@@ -286,7 +309,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="lbl_PilaCola">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="1"/>
@@ -299,7 +322,6 @@
     </Component>
     <Container class="javax.swing.JScrollPane" name="scrll_TablaCola">
       <Properties>
-        <Property name="horizontalScrollBarPolicy" type="int" value="31"/>
         <Property name="verticalScrollBarPolicy" type="int" value="21"/>
       </Properties>
       <AuxValues>
@@ -316,8 +338,8 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="50" green="50" red="50" type="rgb"/>
             </Property>
-            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="0" rowCount="0"/>
+            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="tablaModeloCola" type="code"/>
             </Property>
             <Property name="autoResizeMode" type="int" value="0"/>
             <Property name="enabled" type="boolean" value="false"/>

@@ -23,7 +23,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      */
     public VentanaPrincipal() {
         initComponents();
-        
+        enlazarPanel(presentacion);
         setLocationRelativeTo(null);
     }
 
@@ -69,7 +69,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         pnl_Lateral = new javax.swing.JPanel();
         lbl_Inicio = new javax.swing.JLabel();
@@ -77,6 +76,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         lbl_Problema = new javax.swing.JLabel();
         lbl_Propuesto = new javax.swing.JLabel();
         lbl_Generalizado = new javax.swing.JLabel();
+        lbl_LogoUNS = new javax.swing.JLabel();
         pnl_Principal = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -85,20 +85,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnl_Lateral.setBackground(new java.awt.Color(51, 51, 51));
-        pnl_Lateral.setLayout(new java.awt.GridBagLayout());
 
         lbl_Inicio.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbl_Inicio.setForeground(new java.awt.Color(255, 255, 255));
         lbl_Inicio.setText("Inicio");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 42;
-        gridBagConstraints.ipady = 25;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(163, 22, 0, 0);
-        pnl_Lateral.add(lbl_Inicio, gridBagConstraints);
 
         lbl_Presentacion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lbl_Presentacion.setForeground(new java.awt.Color(255, 255, 255));
@@ -117,29 +107,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 lbl_PresentacionMouseExited(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 70;
-        gridBagConstraints.ipady = 30;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 0, 0, 0);
-        pnl_Lateral.add(lbl_Presentacion, gridBagConstraints);
 
         lbl_Problema.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbl_Problema.setForeground(new java.awt.Color(255, 255, 255));
         lbl_Problema.setText("Problema");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 8;
-        gridBagConstraints.ipady = 25;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(30, 22, 0, 0);
-        pnl_Lateral.add(lbl_Problema, gridBagConstraints);
 
         lbl_Propuesto.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lbl_Propuesto.setForeground(new java.awt.Color(255, 255, 255));
@@ -158,16 +129,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 lbl_PropuestoMouseExited(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 84;
-        gridBagConstraints.ipady = 30;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 0, 0, 0);
-        pnl_Lateral.add(lbl_Propuesto, gridBagConstraints);
 
         lbl_Generalizado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lbl_Generalizado.setForeground(new java.awt.Color(255, 255, 255));
@@ -186,18 +147,46 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 lbl_GeneralizadoMouseExited(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 68;
-        gridBagConstraints.ipady = 30;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 0, 139, 0);
-        pnl_Lateral.add(lbl_Generalizado, gridBagConstraints);
+
+        lbl_LogoUNS.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_LogoUNS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logoUNS.png"))); // NOI18N
+
+        javax.swing.GroupLayout pnl_LateralLayout = new javax.swing.GroupLayout(pnl_Lateral);
+        pnl_Lateral.setLayout(pnl_LateralLayout);
+        pnl_LateralLayout.setHorizontalGroup(
+            pnl_LateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_LateralLayout.createSequentialGroup()
+                .addGroup(pnl_LateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_Presentacion, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_Propuesto, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_Generalizado, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnl_LateralLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(pnl_LateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbl_Inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbl_Problema, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(lbl_LogoUNS, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        pnl_LateralLayout.setVerticalGroup(
+            pnl_LateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_LateralLayout.createSequentialGroup()
+                .addComponent(lbl_LogoUNS, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25)
+                .addComponent(lbl_Inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(lbl_Presentacion, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(lbl_Problema, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(lbl_Propuesto, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(lbl_Generalizado, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         getContentPane().add(pnl_Lateral, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 600));
+
+        pnl_Principal.setBackground(new java.awt.Color(245, 245, 245));
 
         javax.swing.GroupLayout pnl_PrincipalLayout = new javax.swing.GroupLayout(pnl_Principal);
         pnl_Principal.setLayout(pnl_PrincipalLayout);
@@ -295,6 +284,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel lbl_Generalizado;
     private javax.swing.JLabel lbl_Inicio;
+    private javax.swing.JLabel lbl_LogoUNS;
     private javax.swing.JLabel lbl_Presentacion;
     private javax.swing.JLabel lbl_Problema;
     private javax.swing.JLabel lbl_Propuesto;

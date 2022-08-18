@@ -1,5 +1,7 @@
 package paqueteproducto;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author JOEL
@@ -20,6 +22,7 @@ public class Cola {
 
     public void insertar(String x) {
         if (fin == n) {
+            JOptionPane.showMessageDialog(null, "¡Cola llena!");
             System.out.println("\n¡Cola llena!\n");
         } else {
             fin++;
@@ -33,6 +36,7 @@ public class Cola {
     public String suprimir() {
         String x = "";
         if (frente == -1) {
+            JOptionPane.showMessageDialog(null, "¡Cola vacía!");
             System.out.println("\n¡Cola vacía!\n");
         } else {
             x = array[frente];

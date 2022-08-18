@@ -18,29 +18,100 @@ public class pnl_GeneralizadoFinal extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lbl_Enunciado = new javax.swing.JLabel();
-        txtArea_Enunciado = new javax.swing.JTextArea();
+        jLabel2 = new javax.swing.JLabel();
+        scrll_TablaPila = new javax.swing.JScrollPane();
+        tbl_Pila = new javax.swing.JTable();
+        scrll_TablaCola = new javax.swing.JScrollPane();
+        tbl_Cola = new javax.swing.JTable();
+        lbl_Fondo = new javax.swing.JLabel();
+        lbl_Tope = new javax.swing.JLabel();
+        lbl_Frente = new javax.swing.JLabel();
+        lbl_Final = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel3 = new javax.swing.JLabel();
+        txtFld_NotacionInfija = new javax.swing.JTextField();
+        btn_Mostrar = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(245, 245, 245));
 
-        lbl_Enunciado.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lbl_Enunciado.setForeground(new java.awt.Color(70, 70, 70));
-        lbl_Enunciado.setText("Enunciado");
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(70, 70, 70));
+        jLabel2.setText("Pila - Cola");
 
-        txtArea_Enunciado.setEditable(false);
-        txtArea_Enunciado.setBackground(new java.awt.Color(255, 255, 255));
-        txtArea_Enunciado.setColumns(20);
-        txtArea_Enunciado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtArea_Enunciado.setForeground(new java.awt.Color(80, 80, 80));
-        txtArea_Enunciado.setLineWrap(true);
-        txtArea_Enunciado.setRows(5);
-        txtArea_Enunciado.setText("Se tiene dos Estructuras de datos, PILA que contiene una lista de variables y COLA que contiene una lista de coeficientes. Debe preparar un método que empleando las operaciones de PILAS Y COLAS, arme el POLINOMIO (cadena lineal) correspondiente en notación infija. Implementación: (a) En una sola clase main, (b) En una clase main con métodos en esa misma clase, (c) en una clase main con métodos en otra clase y (d) con Swing.");
-        txtArea_Enunciado.setWrapStyleWord(true);
-        txtArea_Enunciado.setAutoscrolls(false);
-        txtArea_Enunciado.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        txtArea_Enunciado.setFocusable(false);
-        txtArea_Enunciado.setMargin(new java.awt.Insets(10, 10, 10, 10));
-        txtArea_Enunciado.setMinimumSize(new java.awt.Dimension(750, 110));
+        scrll_TablaPila.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        scrll_TablaPila.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        scrll_TablaPila.setAutoscrolls(true);
+
+        tbl_Pila.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tbl_Pila.setForeground(new java.awt.Color(80, 80, 80));
+        tbl_Pila.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        tbl_Pila.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        tbl_Pila.setAutoscrolls(false);
+        tbl_Pila.setEnabled(false);
+        tbl_Pila.setFocusable(false);
+        tbl_Pila.setRequestFocusEnabled(false);
+        tbl_Pila.setRowHeight(40);
+        tbl_Pila.setRowSelectionAllowed(false);
+        scrll_TablaPila.setViewportView(tbl_Pila);
+
+        scrll_TablaCola.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        scrll_TablaCola.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        tbl_Cola.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tbl_Cola.setForeground(new java.awt.Color(80, 80, 80));
+        tbl_Cola.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        tbl_Cola.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        tbl_Cola.setEnabled(false);
+        tbl_Cola.setFocusable(false);
+        tbl_Cola.setRequestFocusEnabled(false);
+        tbl_Cola.setRowHeight(40);
+        tbl_Cola.setRowSelectionAllowed(false);
+        scrll_TablaCola.setViewportView(tbl_Cola);
+
+        lbl_Fondo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lbl_Fondo.setForeground(new java.awt.Color(80, 80, 80));
+        lbl_Fondo.setText("Fondo: ?");
+
+        lbl_Tope.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lbl_Tope.setForeground(new java.awt.Color(80, 80, 80));
+        lbl_Tope.setText("Tope: ?");
+
+        lbl_Frente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lbl_Frente.setForeground(new java.awt.Color(80, 80, 80));
+        lbl_Frente.setText("Frente: ?");
+
+        lbl_Final.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lbl_Final.setForeground(new java.awt.Color(80, 80, 80));
+        lbl_Final.setText("Final: ?");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(70, 70, 70));
+        jLabel3.setText("Notación Infija");
+
+        txtFld_NotacionInfija.setColumns(45);
+        txtFld_NotacionInfija.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        btn_Mostrar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btn_Mostrar.setText("MOSTRAR");
+        btn_Mostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_MostrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -48,25 +119,79 @@ public class pnl_GeneralizadoFinal extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(lbl_Enunciado, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtArea_Enunciado, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jSeparator1)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(txtFld_NotacionInfija, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(btn_Mostrar)))
+                    .addComponent(jLabel2)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(scrll_TablaPila, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(scrll_TablaCola, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(50, 50, 50)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbl_Frente)
+                            .addComponent(lbl_Fondo)
+                            .addComponent(lbl_Tope)
+                            .addComponent(lbl_Final))))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(50, 50, 50)
-                .addComponent(lbl_Enunciado)
+                .addComponent(jLabel2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(lbl_Fondo)
+                        .addGap(18, 18, 18)
+                        .addComponent(lbl_Tope))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(scrll_TablaPila, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtArea_Enunciado, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(303, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(scrll_TablaCola, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(lbl_Frente)
+                        .addGap(18, 18, 18)
+                        .addComponent(lbl_Final)))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtFld_NotacionInfija, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_Mostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(131, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_MostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MostrarActionPerformed
+        //txtFld_NotacionInfija.setText(mostrarNotInf);
+    }//GEN-LAST:event_btn_MostrarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel lbl_Enunciado;
-    private javax.swing.JTextArea txtArea_Enunciado;
+    private javax.swing.JButton btn_Mostrar;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lbl_Final;
+    private javax.swing.JLabel lbl_Fondo;
+    private javax.swing.JLabel lbl_Frente;
+    private javax.swing.JLabel lbl_Tope;
+    private javax.swing.JScrollPane scrll_TablaCola;
+    private javax.swing.JScrollPane scrll_TablaPila;
+    private javax.swing.JTable tbl_Cola;
+    private javax.swing.JTable tbl_Pila;
+    private javax.swing.JTextField txtFld_NotacionInfija;
     // End of variables declaration//GEN-END:variables
 }

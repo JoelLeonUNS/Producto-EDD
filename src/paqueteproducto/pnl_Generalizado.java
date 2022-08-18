@@ -1,12 +1,39 @@
 package paqueteproducto;
 
+import java.awt.BorderLayout;
+import javax.swing.JPanel;
+
 public class pnl_Generalizado extends javax.swing.JPanel {
+
+    /**
+     * Variables que se pueden modificar
+     */
+    private int cont = 0;
+    private pnl_GeneralizadoInicial gInicial = new pnl_GeneralizadoInicial();
+    private pnl_GeneralizadoSiguiente gSiguiente = new pnl_GeneralizadoSiguiente();
+    private pnl_GeneralizadoFinal gFinal = new pnl_GeneralizadoFinal();
 
     /**
      * Creates new form pnl_Generalizado
      */
     public pnl_Generalizado() {
         initComponents();
+        enlazarPanel(gInicial);
+        btn_Atras.setEnabled(false);
+        btn_Siguiente.setEnabled(false);
+    }
+
+    /**
+     * Métodos que se pueden modificar
+     */
+    private void enlazarPanel(JPanel panel) {
+        panel.setSize(850, 500);
+        panel.setLocation(0, 0);
+
+        pnl_GeneralizadoPrincipal.removeAll();
+        pnl_GeneralizadoPrincipal.add(panel, BorderLayout.CENTER);
+        pnl_GeneralizadoPrincipal.revalidate();
+        pnl_GeneralizadoPrincipal.repaint();
     }
 
     /**
@@ -18,31 +45,127 @@ public class pnl_Generalizado extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        pnl_AtrasSiguiente = new javax.swing.JPanel();
+        btn_Siguiente = new javax.swing.JButton();
+        btn_Atras = new javax.swing.JButton();
+        pnl_GeneralizadoPrincipal = new javax.swing.JPanel();
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setText("ESTE ES EL PROBLEMA GENERALIZADO");
+        setBackground(new java.awt.Color(245, 245, 245));
+        addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                formMouseMoved(evt);
+            }
+        });
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(246, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(270, 270, 270))
+        pnl_AtrasSiguiente.setBackground(new java.awt.Color(245, 245, 245));
+
+        btn_Siguiente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btn_Siguiente.setText("SIGUIENTE");
+        btn_Siguiente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_SiguienteActionPerformed(evt);
+            }
+        });
+
+        btn_Atras.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btn_Atras.setText("ATRÁS");
+        btn_Atras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_AtrasActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnl_AtrasSiguienteLayout = new javax.swing.GroupLayout(pnl_AtrasSiguiente);
+        pnl_AtrasSiguiente.setLayout(pnl_AtrasSiguienteLayout);
+        pnl_AtrasSiguienteLayout.setHorizontalGroup(
+            pnl_AtrasSiguienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_AtrasSiguienteLayout.createSequentialGroup()
+                .addContainerGap(612, Short.MAX_VALUE)
+                .addComponent(btn_Atras)
+                .addGap(18, 18, 18)
+                .addComponent(btn_Siguiente)
+                .addGap(50, 50, 50))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(230, 230, 230)
-                .addComponent(jLabel1)
-                .addContainerGap(345, Short.MAX_VALUE))
+        pnl_AtrasSiguienteLayout.setVerticalGroup(
+            pnl_AtrasSiguienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_AtrasSiguienteLayout.createSequentialGroup()
+                .addContainerGap(10, Short.MAX_VALUE)
+                .addGroup(pnl_AtrasSiguienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_Siguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_Atras, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50))
         );
+
+        add(pnl_AtrasSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 850, -1));
+
+        javax.swing.GroupLayout pnl_GeneralizadoPrincipalLayout = new javax.swing.GroupLayout(pnl_GeneralizadoPrincipal);
+        pnl_GeneralizadoPrincipal.setLayout(pnl_GeneralizadoPrincipalLayout);
+        pnl_GeneralizadoPrincipalLayout.setHorizontalGroup(
+            pnl_GeneralizadoPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 850, Short.MAX_VALUE)
+        );
+        pnl_GeneralizadoPrincipalLayout.setVerticalGroup(
+            pnl_GeneralizadoPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 500, Short.MAX_VALUE)
+        );
+
+        add(pnl_GeneralizadoPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_SiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SiguienteActionPerformed
+        cont++;
+        switch (cont) {
+            case 0 -> {
+                btn_Atras.setEnabled(false);
+                enlazarPanel(gInicial);
+            }
+            case 1 -> {
+                btn_Siguiente.setEnabled(true);
+                btn_Atras.setEnabled(true);
+                enlazarPanel(gSiguiente);
+            }
+            case 2 -> {
+                enlazarPanel(gFinal);
+                btn_Siguiente.setEnabled(false);
+            }
+        }
+    }//GEN-LAST:event_btn_SiguienteActionPerformed
+
+    private void btn_AtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AtrasActionPerformed
+        cont--;
+        switch (cont) {
+            case 0 -> {
+                btn_Atras.setEnabled(false);
+                enlazarPanel(gInicial);
+            }
+            case 1 -> {
+                btn_Siguiente.setEnabled(true);
+                btn_Atras.setEnabled(true);
+                enlazarPanel(gSiguiente);
+            }
+            case 2 -> {
+                enlazarPanel(gFinal);
+                btn_Siguiente.setEnabled(false);
+            }
+        }
+    }//GEN-LAST:event_btn_AtrasActionPerformed
+
+    private void formMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseMoved
+        if (gInicial.getP() != null && gInicial.getC() != null) {
+            if (gInicial.getTopePila() == gInicial.getNPila() && gInicial.getFinCola() == gInicial.getNCola()) {
+            btn_Siguiente.setEnabled(true);
+        } else {
+            btn_Siguiente.setEnabled(false);
+        }
+        }
+    }//GEN-LAST:event_formMouseMoved
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btn_Atras;
+    private javax.swing.JButton btn_Siguiente;
+    private javax.swing.JPanel pnl_AtrasSiguiente;
+    private javax.swing.JPanel pnl_GeneralizadoPrincipal;
     // End of variables declaration//GEN-END:variables
 }

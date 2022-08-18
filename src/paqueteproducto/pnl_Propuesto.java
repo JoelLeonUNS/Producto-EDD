@@ -3,10 +3,6 @@ package paqueteproducto;
 import java.util.Scanner;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author USUARIO
- */
 public class pnl_Propuesto extends javax.swing.JPanel {
 
     /**
@@ -19,7 +15,6 @@ public class pnl_Propuesto extends javax.swing.JPanel {
     String[] pila = {"b", "a", "z", "y", "x"};
     Pila p;
     Cola c;
-    String mostrarNotInf;
     private final DefaultTableModel tablaModeloPila = new DefaultTableModel();
     private final DefaultTableModel tablaModeloCola = new DefaultTableModel();
 
@@ -27,8 +22,6 @@ public class pnl_Propuesto extends javax.swing.JPanel {
      * Creates new form pnl_Propuesto
      */
     public pnl_Propuesto() {
-        
-        menuValoresPreestablecidos();
         llenarTablaModeloPila();
         llenarTablaModeloCola();
 
@@ -49,11 +42,11 @@ public class pnl_Propuesto extends javax.swing.JPanel {
     private void llenarTablaModeloPila() {
         llenarIndiceTablaModelo(tablaModeloPila); // se llena el índice
 
-        String[] pilaTabla = new String[tamañoPilaCola + 1]; 
+        String[] pilaTabla = new String[tamañoPilaCola + 1];
         pilaTabla[0] = "Pila";
         System.arraycopy(pila, 0, pilaTabla, 1, pila.length);
         tablaModeloPila.addRow(pilaTabla); // datos en la tabla
-        
+
         // se pone el string de la pila
         p = new Pila(pila, 4);
     }
@@ -65,30 +58,18 @@ public class pnl_Propuesto extends javax.swing.JPanel {
         colaTabla[0] = "Cola";
         System.arraycopy(cola, 0, colaTabla, 1, cola.length);
         tablaModeloCola.addRow(colaTabla);
-        
+
         c = new Cola(cola, 4, 0);
     }
 
     private void editarIndicadorPilaCola() {
         lbl_Fondo.setText("Fondo: " + p.getFondo());
         lbl_Tope.setText("Tope: " + p.getTope());
-        
+
         lbl_Frente.setText("Frente: " + c.getFrente());
         lbl_Final.setText("Final: " + c.getFin());
-        
     }
     //
-
-    private void menuValoresPreestablecidos() {
-        llenarTablaModeloPila();
-        llenarTablaModeloCola();
-
-        // se crea los obejtos de la clase Cola y Pila
-        Cola c = new Cola(cola, 4, 0);
-        Pila p = new Pila(pila, 4);
-
-        mostrarNotInf = transformacion(c, p, 5, 1, 1);
-    }
 
     private String transformacion(Cola c, Pila p, int longitud, int tipOp, int tipExp) {
         String notInf = "";
@@ -116,14 +97,12 @@ public class pnl_Propuesto extends javax.swing.JPanel {
                 }
             }
             case 3 -> {
-
             }
             default -> {
                 System.out.println("\nError, opción no encontrada.\n");
             }
         }
-
-        return "\n" + notInf + "\n";
+        return notInf;
     }
 
     private String operador(int tipOp) {
@@ -155,10 +134,10 @@ public class pnl_Propuesto extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        lbl_Enunciado = new javax.swing.JLabel();
         txtArea_Enunciado = new javax.swing.JTextArea();
         txtFld_NotacionInfija = new javax.swing.JTextField();
-        btn_Mostrar = new javax.swing.JButton();
+        btn_Transformar = new javax.swing.JButton();
         scrll_TablaPila = new javax.swing.JScrollPane();
         tbl_Pila = new javax.swing.JTable();
         scrll_TablaCola = new javax.swing.JScrollPane();
@@ -167,23 +146,26 @@ public class pnl_Propuesto extends javax.swing.JPanel {
         lbl_Tope = new javax.swing.JLabel();
         lbl_Frente = new javax.swing.JLabel();
         lbl_Final = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lbl_PilaCola = new javax.swing.JLabel();
+        lbl_NotacionInfija = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
 
+        setBackground(new java.awt.Color(245, 245, 245));
         setDoubleBuffered(false);
         setEnabled(false);
         setFocusable(false);
         setRequestFocusEnabled(false);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setText("Enunciado");
+        lbl_Enunciado.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbl_Enunciado.setForeground(new java.awt.Color(70, 70, 70));
+        lbl_Enunciado.setText("Enunciado");
 
         txtArea_Enunciado.setEditable(false);
         txtArea_Enunciado.setBackground(new java.awt.Color(255, 255, 255));
         txtArea_Enunciado.setColumns(20);
         txtArea_Enunciado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtArea_Enunciado.setForeground(new java.awt.Color(80, 80, 80));
         txtArea_Enunciado.setLineWrap(true);
         txtArea_Enunciado.setRows(5);
         txtArea_Enunciado.setText("Se tiene dos Estructuras de datos, PILA que contiene una lista de variables y COLA que contiene una lista de coeficientes. Debe preparar un método que empleando las operaciones de PILAS Y COLAS, arme el POLINOMIO (cadena lineal) correspondiente en notación infija. Implementación: (a) En una sola clase main, (b) En una clase main con métodos en esa misma clase, (c) en una clase main con métodos en otra clase y (d) con Swing.");
@@ -194,14 +176,16 @@ public class pnl_Propuesto extends javax.swing.JPanel {
         txtArea_Enunciado.setMargin(new java.awt.Insets(10, 10, 10, 10));
         txtArea_Enunciado.setMinimumSize(new java.awt.Dimension(750, 110));
 
+        txtFld_NotacionInfija.setEditable(false);
         txtFld_NotacionInfija.setColumns(45);
         txtFld_NotacionInfija.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        btn_Mostrar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btn_Mostrar.setText("MOSTRAR");
-        btn_Mostrar.addActionListener(new java.awt.event.ActionListener() {
+        btn_Transformar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btn_Transformar.setText("TRANSFORMAR");
+        btn_Transformar.setActionCommand("TRANSFORMAR");
+        btn_Transformar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_MostrarActionPerformed(evt);
+                btn_TransformarActionPerformed(evt);
             }
         });
 
@@ -210,6 +194,7 @@ public class pnl_Propuesto extends javax.swing.JPanel {
         scrll_TablaPila.setAutoscrolls(true);
 
         tbl_Pila.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tbl_Pila.setForeground(new java.awt.Color(80, 80, 80));
         tbl_Pila.setModel(tablaModeloPila);
         tbl_Pila.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         tbl_Pila.setAutoscrolls(false);
@@ -224,6 +209,7 @@ public class pnl_Propuesto extends javax.swing.JPanel {
         scrll_TablaCola.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         tbl_Cola.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tbl_Cola.setForeground(new java.awt.Color(80, 80, 80));
         tbl_Cola.setModel(tablaModeloCola);
         tbl_Cola.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         tbl_Cola.setEnabled(false);
@@ -234,22 +220,28 @@ public class pnl_Propuesto extends javax.swing.JPanel {
         scrll_TablaCola.setViewportView(tbl_Cola);
 
         lbl_Fondo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lbl_Fondo.setForeground(new java.awt.Color(80, 80, 80));
         lbl_Fondo.setText("Fondo: ?");
 
         lbl_Tope.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lbl_Tope.setForeground(new java.awt.Color(80, 80, 80));
         lbl_Tope.setText("Tope: ?");
 
         lbl_Frente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lbl_Frente.setForeground(new java.awt.Color(80, 80, 80));
         lbl_Frente.setText("Frente: ?");
 
         lbl_Final.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lbl_Final.setForeground(new java.awt.Color(80, 80, 80));
         lbl_Final.setText("Final: ?");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setText("Pila - Cola");
+        lbl_PilaCola.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbl_PilaCola.setForeground(new java.awt.Color(70, 70, 70));
+        lbl_PilaCola.setText("Pila - Cola");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel3.setText("Notación Infija");
+        lbl_NotacionInfija.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbl_NotacionInfija.setForeground(new java.awt.Color(70, 70, 70));
+        lbl_NotacionInfija.setText("Notación Infija");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -260,14 +252,14 @@ public class pnl_Propuesto extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jSeparator1)
                     .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_NotacionInfija, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_PilaCola, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_Enunciado, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtArea_Enunciado, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(txtFld_NotacionInfija, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btn_Mostrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btn_Transformar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(scrll_TablaPila, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -284,22 +276,23 @@ public class pnl_Propuesto extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(50, 50, 50)
-                .addComponent(jLabel1)
+                .addComponent(lbl_Enunciado)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtArea_Enunciado, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lbl_PilaCola)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
+                        .addGap(29, 29, 29)
                         .addComponent(lbl_Fondo)
                         .addGap(18, 18, 18)
                         .addComponent(lbl_Tope))
-                    .addComponent(scrll_TablaPila, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(scrll_TablaPila, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(scrll_TablaCola, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
@@ -308,32 +301,35 @@ public class pnl_Propuesto extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(lbl_Final)))
                 .addGap(18, 18, 18)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(9, 9, 9)
-                .addComponent(jLabel3)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lbl_NotacionInfija)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtFld_NotacionInfija, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_Mostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(51, Short.MAX_VALUE))
+                    .addComponent(btn_Transformar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_MostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MostrarActionPerformed
-        txtFld_NotacionInfija.setText(mostrarNotInf);
-    }//GEN-LAST:event_btn_MostrarActionPerformed
+    private void btn_TransformarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_TransformarActionPerformed
+        // valores preestablecidos
+        txtFld_NotacionInfija.setText(transformacion(c, p, tamañoPilaCola, 1, 1));
+        editarIndicadorPilaCola();
+        btn_Transformar.setEnabled(false);
+    }//GEN-LAST:event_btn_TransformarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_Mostrar;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JButton btn_Transformar;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JLabel lbl_Enunciado;
     private javax.swing.JLabel lbl_Final;
     private javax.swing.JLabel lbl_Fondo;
     private javax.swing.JLabel lbl_Frente;
+    private javax.swing.JLabel lbl_NotacionInfija;
+    private javax.swing.JLabel lbl_PilaCola;
     private javax.swing.JLabel lbl_Tope;
     private javax.swing.JScrollPane scrll_TablaCola;
     private javax.swing.JScrollPane scrll_TablaPila;

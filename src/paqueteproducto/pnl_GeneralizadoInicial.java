@@ -1,16 +1,75 @@
 package paqueteproducto;
 
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
+
+    /**
+     * Variables que se pueden modificar
+     */
+    Scanner input = new Scanner(System.in);
+    private int tamañoPilaCola;
+    private int itr;
+    private Pila p;
+    private Cola c;
+
+    private DefaultTableModel tablaModeloPila = new DefaultTableModel();
+    private DefaultTableModel tablaModeloCola = new DefaultTableModel();
 
     /**
      * Creates new form pnl_GeneralizadoIncial
      */
     public pnl_GeneralizadoInicial() {
         initComponents();
+        btn_Definir.setEnabled(false);
+        btn_InsertarCola.setEnabled(false);
+        btn_InsertarPila.setEnabled(false);
+        txtFld_InsertarCola.setEnabled(false);
+        txtFld_InsertarPila.setEnabled(false);
+    }
+
+    /**
+     * Métodos que se pueden modificar
+     */
+    private void crearPilaCola() {
+        p = new Pila(new String[tamañoPilaCola], -1);
+        c = new Cola(new String[tamañoPilaCola], -1, -1);
+    }
+
+    private void llenarTablaModelo(DefaultTableModel tablaModelo, String PilaCola) {
+        tablaModelo.addColumn("Índice");
+        for (int i = 0; i < tamañoPilaCola; i++) {
+            tablaModelo.addColumn(String.valueOf(i));
+        }
+        tablaModelo.addRow(new String[tamañoPilaCola]);
+        tablaModelo.setValueAt(PilaCola, 0, 0);
+    }
+
+    public Pila getP() {
+        return p;
+    }
+
+    public Cola getC() {
+        return c;
+    }
+        
+    public int getTopePila() {
+        return p.getTope();
     }
     
+    public int getNPila() {
+        return p.getN();
+    }
+
+    public int getFinCola() {
+        return c.getFin();
+    }
     
+    public int getNCola() {
+        return c.getN();
+    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -25,17 +84,17 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
         lbl_Indicaciones = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         lbl_Tamaño = new javax.swing.JLabel();
-        textFld_Tamaño = new javax.swing.JTextField();
+        txtFld_Tamaño = new javax.swing.JTextField();
         btn_Definir = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
         lbl_Insertar = new javax.swing.JLabel();
-        textFld_InsertarPila = new javax.swing.JTextField();
+        txtFld_InsertarPila = new javax.swing.JTextField();
         btn_InsertarPila = new javax.swing.JButton();
         btn_InsertarCola = new javax.swing.JButton();
-        textFld_InsertarCola = new javax.swing.JTextField();
+        txtFld_InsertarCola = new javax.swing.JTextField();
         scrll_TablaPila = new javax.swing.JScrollPane();
         tbl_Pila = new javax.swing.JTable();
-        jLabel2 = new javax.swing.JLabel();
+        lbl_PilaCola = new javax.swing.JLabel();
         scrll_TablaCola = new javax.swing.JScrollPane();
         tbl_Cola = new javax.swing.JTable();
         lbl_Tope = new javax.swing.JLabel();
@@ -69,10 +128,25 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
         lbl_Tamaño.setForeground(new java.awt.Color(70, 70, 70));
         lbl_Tamaño.setText("Tamaño");
 
-        textFld_Tamaño.setColumns(10);
-        textFld_Tamaño.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtFld_Tamaño.setColumns(10);
+        txtFld_Tamaño.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtFld_Tamaño.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtFld_TamañoFocusLost(evt);
+            }
+        });
+        txtFld_Tamaño.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtFld_TamañoKeyReleased(evt);
+            }
+        });
 
         btn_Definir.setText("DEFINIR");
+        btn_Definir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_DefinirActionPerformed(evt);
+            }
+        });
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
@@ -80,32 +154,55 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
         lbl_Insertar.setForeground(new java.awt.Color(70, 70, 70));
         lbl_Insertar.setText("Insetar");
 
-        textFld_InsertarPila.setColumns(10);
-        textFld_InsertarPila.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtFld_InsertarPila.setColumns(10);
+        txtFld_InsertarPila.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtFld_InsertarPila.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtFld_InsertarPilaFocusLost(evt);
+            }
+        });
+        txtFld_InsertarPila.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtFld_InsertarPilaKeyReleased(evt);
+            }
+        });
 
         btn_InsertarPila.setText("PILA");
+        btn_InsertarPila.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_InsertarPilaActionPerformed(evt);
+            }
+        });
 
         btn_InsertarCola.setText("COLA");
+        btn_InsertarCola.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_InsertarColaActionPerformed(evt);
+            }
+        });
 
-        textFld_InsertarCola.setColumns(10);
-        textFld_InsertarCola.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtFld_InsertarCola.setColumns(10);
+        txtFld_InsertarCola.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtFld_InsertarCola.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtFld_InsertarColaFocusLost(evt);
+            }
+        });
+        txtFld_InsertarCola.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtFld_InsertarColaKeyReleased(evt);
+            }
+        });
 
-        scrll_TablaPila.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         scrll_TablaPila.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
         scrll_TablaPila.setAutoscrolls(true);
 
         tbl_Pila.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tbl_Pila.setForeground(new java.awt.Color(80, 80, 80));
-        tbl_Pila.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-
-            }
-        ));
+        tbl_Pila.setModel(tablaModeloPila);
         tbl_Pila.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         tbl_Pila.setAutoscrolls(false);
+        tbl_Pila.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         tbl_Pila.setEnabled(false);
         tbl_Pila.setFocusable(false);
         tbl_Pila.setRequestFocusEnabled(false);
@@ -113,23 +210,15 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
         tbl_Pila.setRowSelectionAllowed(false);
         scrll_TablaPila.setViewportView(tbl_Pila);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(70, 70, 70));
-        jLabel2.setText("Pila - Cola");
+        lbl_PilaCola.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbl_PilaCola.setForeground(new java.awt.Color(70, 70, 70));
+        lbl_PilaCola.setText("Pila - Cola");
 
-        scrll_TablaCola.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         scrll_TablaCola.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         tbl_Cola.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tbl_Cola.setForeground(new java.awt.Color(80, 80, 80));
-        tbl_Cola.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-
-            }
-        ));
+        tbl_Cola.setModel(tablaModeloCola);
         tbl_Cola.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         tbl_Cola.setEnabled(false);
         tbl_Cola.setFocusable(false);
@@ -168,9 +257,9 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(textFld_InsertarPila, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                    .addComponent(txtFld_InsertarPila, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                                     .addComponent(lbl_Insertar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(textFld_Tamaño, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                    .addComponent(txtFld_Tamaño, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                                     .addComponent(lbl_Tamaño, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -178,7 +267,7 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
                                     .addComponent(btn_InsertarPila, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jSeparator3)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(textFld_InsertarCola, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addComponent(txtFld_InsertarCola, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                                 .addGap(18, 18, 18)
                                 .addComponent(btn_InsertarCola, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
@@ -186,7 +275,7 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLabel2)
+                                .addComponent(lbl_PilaCola)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(scrll_TablaCola, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(scrll_TablaPila, javax.swing.GroupLayout.Alignment.LEADING))
@@ -216,7 +305,7 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                                     .addComponent(btn_Definir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(textFld_Tamaño, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtFld_Tamaño, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -224,16 +313,16 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                                     .addComponent(btn_InsertarPila, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(textFld_InsertarPila, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtFld_InsertarPila, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                                     .addComponent(btn_InsertarCola, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(textFld_InsertarCola, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtFld_InsertarCola, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(jSeparator2))
                         .addGap(63, 63, 63))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                        .addComponent(lbl_PilaCola)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -253,12 +342,80 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_DefinirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DefinirActionPerformed
+        if (!txtFld_Tamaño.getText().equals("")) {
+            btn_Definir.setEnabled(true);
+            tamañoPilaCola = Integer.valueOf(txtFld_Tamaño.getText());
+
+            crearPilaCola();
+            llenarTablaModelo(tablaModeloPila, "Pila");
+            llenarTablaModelo(tablaModeloCola, "Cola");
+            txtFld_InsertarPila.setEnabled(true);
+            txtFld_InsertarCola.setEnabled(true);
+            btn_Definir.setEnabled(false);
+        } else {
+            JOptionPane.showMessageDialog(null, "No se puede definir el tamaño, porque no hay ningún dato en el campo de texto.");
+        }
+        System.out.println(tamañoPilaCola);
+    }//GEN-LAST:event_btn_DefinirActionPerformed
+
+    private void txtFld_TamañoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFld_TamañoKeyReleased
+        if (!txtFld_Tamaño.getText().equals("")) {
+            btn_Definir.setEnabled(true);
+        }
+    }//GEN-LAST:event_txtFld_TamañoKeyReleased
+
+    private void txtFld_TamañoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtFld_TamañoFocusLost
+        if (txtFld_Tamaño.getText().equals("")) {
+            btn_Definir.setEnabled(false);
+        }
+    }//GEN-LAST:event_txtFld_TamañoFocusLost
+
+    private void btn_InsertarPilaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_InsertarPilaActionPerformed
+        p.push(txtFld_InsertarPila.getText());
+        if (tablaModeloPila.getValueAt(0, p.getTope()+1) == null) {
+            tablaModeloPila.setValueAt(txtFld_InsertarPila.getText(), 0, p.getTope() + 1);
+            // se suma 1 al tope de la pila, porque en la posición 0 (de la tabla) está la palabra "Pila"
+        }
+    }//GEN-LAST:event_btn_InsertarPilaActionPerformed
+
+    private void txtFld_InsertarPilaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFld_InsertarPilaKeyReleased
+        if (!txtFld_InsertarPila.getText().equals("")) {
+            btn_InsertarPila.setEnabled(true);
+        }
+    }//GEN-LAST:event_txtFld_InsertarPilaKeyReleased
+
+    private void txtFld_InsertarPilaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtFld_InsertarPilaFocusLost
+        if (txtFld_InsertarPila.getText().equals("")) {
+            btn_InsertarPila.setEnabled(false);
+        }
+    }//GEN-LAST:event_txtFld_InsertarPilaFocusLost
+
+    private void btn_InsertarColaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_InsertarColaActionPerformed
+        c.insertar(txtFld_InsertarCola.getText());
+        if (tablaModeloCola.getValueAt(0, c.getFin()+1) == null) {
+            tablaModeloCola.setValueAt(txtFld_InsertarCola.getText(), 0, c.getFin() + 1);
+            // se suma 1 al fin de la cola, porque en la posición 0 (de la tabla) está la palabra "Cola"
+        }
+    }//GEN-LAST:event_btn_InsertarColaActionPerformed
+
+    private void txtFld_InsertarColaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFld_InsertarColaKeyReleased
+        if (!txtFld_InsertarCola.getText().equals("")) {
+            btn_InsertarCola.setEnabled(true);
+        }
+    }//GEN-LAST:event_txtFld_InsertarColaKeyReleased
+
+    private void txtFld_InsertarColaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtFld_InsertarColaFocusLost
+        if (txtFld_InsertarCola.getText().equals("")) {
+            btn_InsertarCola.setEnabled(false);
+        }
+    }//GEN-LAST:event_txtFld_InsertarColaFocusLost
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Definir;
     private javax.swing.JButton btn_InsertarCola;
     private javax.swing.JButton btn_InsertarPila;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
@@ -267,15 +424,16 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
     private javax.swing.JLabel lbl_Frente;
     private javax.swing.JLabel lbl_Indicaciones;
     private javax.swing.JLabel lbl_Insertar;
+    private javax.swing.JLabel lbl_PilaCola;
     private javax.swing.JLabel lbl_Tamaño;
     private javax.swing.JLabel lbl_Tope;
     private javax.swing.JScrollPane scrll_TablaCola;
     private javax.swing.JScrollPane scrll_TablaPila;
     private javax.swing.JTable tbl_Cola;
     private javax.swing.JTable tbl_Pila;
-    private javax.swing.JTextField textFld_InsertarCola;
-    private javax.swing.JTextField textFld_InsertarPila;
-    private javax.swing.JTextField textFld_Tamaño;
     private javax.swing.JTextArea txtArea_Indicaciones;
+    private javax.swing.JTextField txtFld_InsertarCola;
+    private javax.swing.JTextField txtFld_InsertarPila;
+    private javax.swing.JTextField txtFld_Tamaño;
     // End of variables declaration//GEN-END:variables
 }
