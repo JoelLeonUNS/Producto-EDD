@@ -1,6 +1,9 @@
 package paqueteproducto;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Scanner;
+import javax.swing.Timer;
 import javax.swing.table.DefaultTableModel;
 
 public class pnl_Propuesto extends javax.swing.JPanel {
@@ -13,17 +16,19 @@ public class pnl_Propuesto extends javax.swing.JPanel {
     private int itr;
     String[] cola = {"15", "11", "9", "6", "1"};
     String[] pila = {"b", "a", "z", "y", "x"};
-    Pila p;
-    Cola c;
+    private Pila p;
+    private Cola c;
     private final DefaultTableModel tablaModeloPila = new DefaultTableModel();
     private final DefaultTableModel tablaModeloCola = new DefaultTableModel();
+    private Timer time;
 
     /**
      * Creates new form pnl_Propuesto
      */
     public pnl_Propuesto() {
-        llenarTablaModeloPila();
-        llenarTablaModeloCola();
+        crearPilaCola();
+        llenarTablaModelo(tablaModeloPila, "Pila", 'p');
+        llenarTablaModelo(tablaModeloCola, "Cola", 'c');
 
         initComponents();
         editarIndicadorPilaCola();
@@ -32,34 +37,41 @@ public class pnl_Propuesto extends javax.swing.JPanel {
     /**
      * Métodos que se pueden modificar
      */
-    private void llenarIndiceTablaModelo(DefaultTableModel tablaIndice) {
-        tablaIndice.addColumn("Índice");
+    private void crearPilaCola() {
+        p = new Pila(new String[tamañoPilaCola], -1, -1);
+        p.push("b");
+        p.push("a");
+        p.push("z");
+        p.push("y");
+        p.push("x");
+
+        c = new Cola(new String[tamañoPilaCola], -1, -1);
+        c.insertar("15");
+        c.insertar("11");
+        c.insertar("9");
+        c.insertar("6");
+        c.insertar("1");
+    }
+
+    private void llenarTablaModelo(DefaultTableModel tablaModelo, String PilaCola, char tipo) {
+        tablaModelo.addColumn("Índice");
         for (int i = 0; i < tamañoPilaCola; i++) {
-            tablaIndice.addColumn(String.valueOf(i));
+            tablaModelo.addColumn(String.valueOf(i));
         }
-    }
-
-    private void llenarTablaModeloPila() {
-        llenarIndiceTablaModelo(tablaModeloPila); // se llena el índice
-
-        String[] pilaTabla = new String[tamañoPilaCola + 1];
-        pilaTabla[0] = "Pila";
-        System.arraycopy(pila, 0, pilaTabla, 1, pila.length);
-        tablaModeloPila.addRow(pilaTabla); // datos en la tabla
-
-        // se pone el string de la pila
-        p = new Pila(pila, 4);
-    }
-
-    private void llenarTablaModeloCola() {
-        llenarIndiceTablaModelo(tablaModeloCola);
-
-        String[] colaTabla = new String[tamañoPilaCola + 1];
-        colaTabla[0] = "Cola";
-        System.arraycopy(cola, 0, colaTabla, 1, cola.length);
-        tablaModeloCola.addRow(colaTabla);
-
-        c = new Cola(cola, 4, 0);
+        tablaModelo.addRow(new String[tamañoPilaCola + 1]);
+        tablaModelo.setValueAt(PilaCola, 0, 0);
+        switch (tipo) {
+            case 'p' -> {
+                for (int i = 0; i < tamañoPilaCola; i++) {
+                    tablaModelo.setValueAt(p.getArray()[i], 0, i + 1);
+                }
+            }
+            case 'c' -> {
+                for (int i = 0; i < tamañoPilaCola; i++) {
+                    tablaModelo.setValueAt(c.getArray()[i], 0, i + 1);
+                }
+            }
+        }
     }
 
     private void editarIndicadorPilaCola() {
@@ -69,31 +81,51 @@ public class pnl_Propuesto extends javax.swing.JPanel {
         lbl_Frente.setText("Frente: " + c.getFrente());
         lbl_Final.setText("Final: " + c.getFin());
     }
-    //
 
-    private String transformacion(Cola c, Pila p, int longitud, int tipOp, int tipExp) {
+    private void editarTablaPilaCola() {
+        for (int i = 0; i < tamañoPilaCola; i++) {
+            tablaModeloPila.setValueAt(p.getArray()[i], 0, i + 1);
+        }
+        for (int i = 0; i < tamañoPilaCola; i++) {
+            tablaModeloCola.setValueAt(c.getArray()[i], 0, i + 1);
+        }
+    }
+
+    private void animacionTransformacion() {
+
+        time = new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                editarIndicadorPilaCola();
+                editarTablaPilaCola();
+            }
+        });
+    }
+
+    //
+    private String transformacion(int tipOp, int tipExp) {
         String notInf = "";
         String x, exp; // para almacenar el valor que retorna la cola al hacer la supresión
 
         switch (tipExp) {
             case 1 -> { // 15*x
-                for (int i = 0; i < longitud; i++) {
+                for (int i = 0; i < tamañoPilaCola; i++) {                  
                     x = c.suprimir();
                     notInf += (!x.equals("1") ? x + "*" : "");
                     notInf += p.pop(); // se hace pop y se disminuye en 1 el tope
                     notInf += ((p.getTope() > 0) ? "^" + (p.getTope() + 1) : ""); // por eso se suma 1 al tope
-                    notInf += ((i < longitud - 1) ? operador(tipOp) : "");
+                    notInf += ((i < tamañoPilaCola - 1) ? operador(tipOp) : "");
                 }
             }
             case 2 -> {
-                for (int i = 0; i < longitud; i++) {
+                for (int i = 0; i < tamañoPilaCola; i++) {
                     x = c.suprimir();
                     notInf += (!x.equals("1") ? x + "*" : "");
                     notInf += p.pop();
                     System.out.print("Ingrese el exponente n°" + (1 + i) + ": ");
                     exp = input.next();
                     notInf += (!exp.equals("1") ? "^" + exp : "");
-                    notInf += ((i < longitud - 1) ? operador(tipOp) : "");
+                    notInf += ((i < tamañoPilaCola - 1) ? operador(tipOp) : "");
                 }
             }
             case 3 -> {
@@ -182,7 +214,6 @@ public class pnl_Propuesto extends javax.swing.JPanel {
 
         btn_Transformar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btn_Transformar.setText("TRANSFORMAR");
-        btn_Transformar.setActionCommand("TRANSFORMAR");
         btn_Transformar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_TransformarActionPerformed(evt);
@@ -203,6 +234,8 @@ public class pnl_Propuesto extends javax.swing.JPanel {
         tbl_Pila.setRequestFocusEnabled(false);
         tbl_Pila.setRowHeight(40);
         tbl_Pila.setRowSelectionAllowed(false);
+        tbl_Pila.getTableHeader().setResizingAllowed(false);
+        tbl_Pila.getTableHeader().setReorderingAllowed(false);
         scrll_TablaPila.setViewportView(tbl_Pila);
 
         scrll_TablaCola.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -217,6 +250,8 @@ public class pnl_Propuesto extends javax.swing.JPanel {
         tbl_Cola.setRequestFocusEnabled(false);
         tbl_Cola.setRowHeight(40);
         tbl_Cola.setRowSelectionAllowed(false);
+        tbl_Cola.getTableHeader().setResizingAllowed(false);
+        tbl_Cola.getTableHeader().setReorderingAllowed(false);
         scrll_TablaCola.setViewportView(tbl_Cola);
 
         lbl_Fondo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -314,8 +349,9 @@ public class pnl_Propuesto extends javax.swing.JPanel {
 
     private void btn_TransformarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_TransformarActionPerformed
         // valores preestablecidos
-        txtFld_NotacionInfija.setText(transformacion(c, p, tamañoPilaCola, 1, 1));
+        txtFld_NotacionInfija.setText(transformacion(1, 1));
         editarIndicadorPilaCola();
+        editarTablaPilaCola();
         btn_Transformar.setEnabled(false);
     }//GEN-LAST:event_btn_TransformarActionPerformed
 

@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class MenuMain {
 
     static Scanner input = new Scanner(System.in);
-    static int FINAL = -1, FRENTE = -1, TOPE = -1, itr;
+    static int FINAL = -1, FRENTE = -1, TOPE = -1, FONDO = -1, itr;
 
     public static void main(String[] args) {
         int op;
@@ -44,7 +44,7 @@ public class MenuMain {
         String[] pila = {"b", "a", "z", "y", "x"};
         // se crea los obejtos de la clase Cola y Pila
         Cola c2 = new Cola(cola, 4, 0);
-        Pila p2 = new Pila(pila, 4);
+        Pila p2 = new Pila(pila, 4, 0);
 
         System.out.println(transformacion(c2, p2, 5, 1, 1));
     } 
@@ -65,7 +65,7 @@ public class MenuMain {
 
         // se crea los objetos de la clase Cola y Pila
         Cola c1 = new Cola(cola, FINAL, FRENTE);
-        Pila p1 = new Pila(pila, TOPE);
+        Pila p1 = new Pila(pila, TOPE, FONDO);
 
         // llenado de pila y cola
         llenarColaPila(c1, p1, longitud);

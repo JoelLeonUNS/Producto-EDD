@@ -34,7 +34,7 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
      * Métodos que se pueden modificar
      */
     private void crearPilaCola() {
-        p = new Pila(new String[tamañoPilaCola], -1);
+        p = new Pila(new String[tamañoPilaCola], -1, -1);
         c = new Cola(new String[tamañoPilaCola], -1, -1);
     }
 
@@ -43,8 +43,18 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
         for (int i = 0; i < tamañoPilaCola; i++) {
             tablaModelo.addColumn(String.valueOf(i));
         }
-        tablaModelo.addRow(new String[tamañoPilaCola]);
+        tablaModelo.addRow(new String[tamañoPilaCola + 1]);
         tablaModelo.setValueAt(PilaCola, 0, 0);
+    }
+
+    private void editarIndicadorPila() {
+        lbl_Fondo.setText("Fondo: " + p.getFondo());
+        lbl_Tope.setText("Tope: " + p.getTope());
+    }
+
+    private void editarIndicadorCola() {
+        lbl_Frente.setText("Frente: " + c.getFrente());
+        lbl_Final.setText("Final: " + c.getFin());
     }
 
     public Pila getP() {
@@ -54,11 +64,11 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
     public Cola getC() {
         return c;
     }
-        
+
     public int getTopePila() {
         return p.getTope();
     }
-    
+
     public int getNPila() {
         return p.getN();
     }
@@ -66,11 +76,11 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
     public int getFinCola() {
         return c.getFin();
     }
-    
+
     public int getNCola() {
         return c.getN();
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -208,6 +218,8 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
         tbl_Pila.setRequestFocusEnabled(false);
         tbl_Pila.setRowHeight(40);
         tbl_Pila.setRowSelectionAllowed(false);
+        tbl_Pila.getTableHeader().setResizingAllowed(false);
+        tbl_Pila.getTableHeader().setReorderingAllowed(false);
         scrll_TablaPila.setViewportView(tbl_Pila);
 
         lbl_PilaCola.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -225,6 +237,8 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
         tbl_Cola.setRequestFocusEnabled(false);
         tbl_Cola.setRowHeight(40);
         tbl_Cola.setRowSelectionAllowed(false);
+        tbl_Cola.getTableHeader().setResizingAllowed(false);
+        tbl_Cola.getTableHeader().setReorderingAllowed(false);
         scrll_TablaCola.setViewportView(tbl_Cola);
 
         lbl_Tope.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -273,12 +287,10 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(lbl_PilaCola)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(scrll_TablaCola, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(scrll_TablaPila, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(lbl_PilaCola, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(scrll_TablaPila, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
+                            .addComponent(scrll_TablaCola))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbl_Frente)
@@ -330,7 +342,7 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
                                 .addGap(24, 24, 24)
                                 .addComponent(scrll_TablaCola, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(29, 29, 29)
+                                .addGap(31, 31, 31)
                                 .addComponent(lbl_Fondo)
                                 .addGap(18, 18, 18)
                                 .addComponent(lbl_Tope)
@@ -373,9 +385,10 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
 
     private void btn_InsertarPilaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_InsertarPilaActionPerformed
         p.push(txtFld_InsertarPila.getText());
-        if (tablaModeloPila.getValueAt(0, p.getTope()+1) == null) {
+        if (tablaModeloPila.getValueAt(0, p.getTope() + 1) == null) {
             tablaModeloPila.setValueAt(txtFld_InsertarPila.getText(), 0, p.getTope() + 1);
             // se suma 1 al tope de la pila, porque en la posición 0 (de la tabla) está la palabra "Pila"
+            editarIndicadorPila();
         }
     }//GEN-LAST:event_btn_InsertarPilaActionPerformed
 
@@ -393,9 +406,10 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
 
     private void btn_InsertarColaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_InsertarColaActionPerformed
         c.insertar(txtFld_InsertarCola.getText());
-        if (tablaModeloCola.getValueAt(0, c.getFin()+1) == null) {
+        if (tablaModeloCola.getValueAt(0, c.getFin() + 1) == null) {
             tablaModeloCola.setValueAt(txtFld_InsertarCola.getText(), 0, c.getFin() + 1);
             // se suma 1 al fin de la cola, porque en la posición 0 (de la tabla) está la palabra "Cola"
+            editarIndicadorCola();
         }
     }//GEN-LAST:event_btn_InsertarColaActionPerformed
 
