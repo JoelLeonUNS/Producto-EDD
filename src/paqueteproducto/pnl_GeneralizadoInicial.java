@@ -11,7 +11,6 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
      */
     Scanner input = new Scanner(System.in);
     private int tamañoPilaCola;
-    private int itr;
     private Pila p;
     private Cola c;
 
@@ -56,7 +55,9 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
         lbl_Frente.setText("Frente: " + c.getFrente());
         lbl_Final.setText("Final: " + c.getFin());
     }
-
+    
+    // ---------------------------------------------
+    
     public Pila getP() {
         return p;
     }
@@ -65,6 +66,19 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
         return c;
     }
 
+    public int getTamañoPilaCola() {
+        return tamañoPilaCola;
+    }
+
+    public DefaultTableModel getTablaModeloPila() {
+        return tablaModeloPila;
+    }
+
+    public DefaultTableModel getTablaModeloCola() {
+        return tablaModeloCola;
+    }
+    
+    // ---------------------------------------------
     public int getTopePila() {
         return p.getTope();
     }
@@ -355,10 +369,11 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_DefinirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DefinirActionPerformed
-        if (!txtFld_Tamaño.getText().equals("")) {
+        if (!txtFld_Tamaño.getText().equals("")) { // quitar?
             btn_Definir.setEnabled(true);
             tamañoPilaCola = Integer.valueOf(txtFld_Tamaño.getText());
 
+            
             crearPilaCola();
             llenarTablaModelo(tablaModeloPila, "Pila");
             llenarTablaModelo(tablaModeloCola, "Cola");
@@ -368,7 +383,8 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
         } else {
             JOptionPane.showMessageDialog(null, "No se puede definir el tamaño, porque no hay ningún dato en el campo de texto.");
         }
-        System.out.println(tamañoPilaCola);
+        // borrar luego
+        System.out.println("Tamaño de la pila y cola: " + tamañoPilaCola);
     }//GEN-LAST:event_btn_DefinirActionPerformed
 
     private void txtFld_TamañoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFld_TamañoKeyReleased

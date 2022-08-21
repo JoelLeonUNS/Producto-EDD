@@ -17,7 +17,11 @@ public class pnl_Propuesto extends javax.swing.JPanel {
     String[] cola = {"15", "11", "9", "6", "1"};
     String[] pila = {"b", "a", "z", "y", "x"};
     private Pila p;
-    private Cola c;
+    private Cola c; 
+    // en este caso no se usan estas varibles, pero quedan como para seguir la 
+    // estructura del método transformar.
+    private Cola cOperador , cExponente;
+    
     private final DefaultTableModel tablaModeloPila = new DefaultTableModel();
     private final DefaultTableModel tablaModeloCola = new DefaultTableModel();
     private Timer time;
@@ -109,29 +113,23 @@ public class pnl_Propuesto extends javax.swing.JPanel {
 
         switch (tipExp) {
             case 1 -> { // 15*x
-                for (int i = 0; i < tamañoPilaCola; i++) {                  
+                for (int i = 0; i < tamañoPilaCola; i++) {
+                    notInf += ((i != 0 || !operador(tipOp).equals("+")) ? operador(tipOp) : "");
                     x = c.suprimir();
                     notInf += (!x.equals("1") ? x + "*" : "");
                     notInf += p.pop(); // se hace pop y se disminuye en 1 el tope
                     notInf += ((p.getTope() > 0) ? "^" + (p.getTope() + 1) : ""); // por eso se suma 1 al tope
-                    notInf += ((i < tamañoPilaCola - 1) ? operador(tipOp) : "");
                 }
             }
             case 2 -> {
                 for (int i = 0; i < tamañoPilaCola; i++) {
+                    notInf += ((i != 0 || !operador(tipOp).equals("+")) ? operador(tipOp) : "");
                     x = c.suprimir();
                     notInf += (!x.equals("1") ? x + "*" : "");
                     notInf += p.pop();
-                    System.out.print("Ingrese el exponente n°" + (1 + i) + ": ");
-                    exp = input.next();
+                    exp = cExponente.suprimir();
                     notInf += (!exp.equals("1") ? "^" + exp : "");
-                    notInf += ((i < tamañoPilaCola - 1) ? operador(tipOp) : "");
                 }
-            }
-            case 3 -> {
-            }
-            default -> {
-                System.out.println("\nError, opción no encontrada.\n");
             }
         }
         return notInf;
@@ -142,16 +140,14 @@ public class pnl_Propuesto extends javax.swing.JPanel {
 
         switch (tipOp) {
             case 1 -> {
-                operador = (itr % 2 == 0) ? "-" : "+";
+                operador = (itr % 2 == 0) ? "+" : "-";
                 itr++;
             }
             case 2 -> {
                 operador = (Math.round((Math.random() + 1)) == 1) ? "-" : "+";
             }
             case 3 -> {
-                System.out.print("Indroduzca el operador n°" + (1 + itr) + ": ");
-                operador = String.valueOf(input.next().charAt(0));
-                itr++; // sirve para contar los operadores también.
+                operador = cOperador.suprimir();
             }
         }
         return operador;
@@ -349,7 +345,7 @@ public class pnl_Propuesto extends javax.swing.JPanel {
 
     private void btn_TransformarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_TransformarActionPerformed
         // valores preestablecidos
-        txtFld_NotacionInfija.setText(transformacion(1, 1));
+        txtFld_NotacionInfija.setText(transformacion(1, 1)); // las opciones por defecto
         editarIndicadorPilaCola();
         editarTablaPilaCola();
         btn_Transformar.setEnabled(false);

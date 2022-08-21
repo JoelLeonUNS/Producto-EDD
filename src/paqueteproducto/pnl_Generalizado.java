@@ -35,7 +35,59 @@ public class pnl_Generalizado extends javax.swing.JPanel {
         pnl_GeneralizadoPrincipal.revalidate();
         pnl_GeneralizadoPrincipal.repaint();
     }
+    
+    private void actualizarComponentes() {
+        actualizarP();
+        actualizarC();    
+        actualizarTablaModeloPila();
+        actualizarTablaModeloCola();
+        gFinal.activarSetTablaModelo(true);
+        actualizarTipOp();
+        actualizarTipExp();
+        actualizarcOperador();
+        actualizarcExponente();
+    }
+    
+    // ---------------------------------------------
+    
+    private void actualizarTamañoPilaCola() {
+        gSiguiente.setTamañoPilaCola(gInicial.getTamañoPilaCola());
+        gFinal.setTamañoPilaCola(gInicial.getTamañoPilaCola());
+    }
+    
+    
+    private void actualizarP() {
+        gFinal.setP(gInicial.getP());
+    }
+    
+    private void actualizarC() {
+        gFinal.setC(gInicial.getC());
+    }
+    
+    private void actualizarTablaModeloPila() {
+        gFinal.setTablaModeloPila(gInicial.getTablaModeloPila());
+    }
+    
+    private void actualizarTablaModeloCola() {
+        gFinal.setTablaModeloCola(gInicial.getTablaModeloCola());
+    }
 
+    private void actualizarTipOp() {
+        gFinal.setTipOp(gSiguiente.getTipOp());
+    }
+    
+    private void actualizarTipExp() {
+        gFinal.setTipExp(gSiguiente.getTipExp());
+    }
+    
+    private void actualizarcOperador() {
+        gFinal.setcOperador(gSiguiente.getcOperador());
+    }
+    
+    private void actualizarcExponente() {
+        gFinal.setcExponente(gSiguiente.getcExponente());
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -126,7 +178,7 @@ public class pnl_Generalizado extends javax.swing.JPanel {
                 enlazarPanel(gSiguiente);
             }
             case 2 -> {
-                enlazarPanel(gFinal);
+                enlazarPanel(gFinal);              
                 btn_Siguiente.setEnabled(false);
             }
         }
@@ -155,6 +207,8 @@ public class pnl_Generalizado extends javax.swing.JPanel {
         if (gInicial.getP() != null && gInicial.getC() != null) {
             if (gInicial.getTopePila() == gInicial.getNPila() && gInicial.getFinCola() == gInicial.getNCola()) {
             btn_Siguiente.setEnabled(true);
+            actualizarTamañoPilaCola();
+            actualizarComponentes();
         } else {
             btn_Siguiente.setEnabled(false);
         }

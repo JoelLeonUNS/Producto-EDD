@@ -43,22 +43,22 @@
                       </Group>
                       <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="txtArea_Enunciado" alignment="1" min="-2" pref="193" max="-2" attributes="0"/>
-                          <Component id="lbl_Tamaño1" min="-2" pref="100" max="-2" attributes="0"/>
-                          <Component id="lbl_Tamaño" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                          <Component id="txtArea_IndicacionExponente" alignment="1" min="-2" pref="193" max="-2" attributes="0"/>
+                          <Component id="lbl_Exponente" min="-2" pref="100" max="-2" attributes="0"/>
+                          <Component id="lbl_Operador" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jComboBox1" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="cbBx_Operador" min="-2" pref="100" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="btn_Definir" min="-2" pref="75" max="-2" attributes="0"/>
+                              <Component id="btn_DefinirOperador" min="-2" pref="75" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbl_TerminoOperador" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbl_TerminoExponente" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="textFld_Tamaño1" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="txtFld_Exponente" min="-2" pref="100" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="btn_Definir1" min="-2" pref="75" max="-2" attributes="0"/>
+                              <Component id="btn_DefinirExponente" min="-2" pref="75" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="txtArea_Enunciado1" min="-2" pref="193" max="-2" attributes="0"/>
+                          <Component id="txtArea_IndicacionOperador" min="-2" pref="193" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -81,16 +81,16 @@
                       <Component id="rdBtn_MO3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="lbl_Tamaño" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbl_Operador" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbl_TerminoOperador" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="2" attributes="0">
-                          <Component id="jComboBox1" alignment="2" min="-2" pref="40" max="-2" attributes="0"/>
-                          <Component id="btn_Definir" alignment="2" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="cbBx_Operador" alignment="2" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="btn_DefinirOperador" alignment="2" min="-2" pref="40" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="txtArea_Enunciado1" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="txtArea_IndicacionOperador" min="-2" pref="50" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -105,18 +105,18 @@
                       <Component id="rdBtn_ME2" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Component id="lbl_Tamaño1" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbl_Exponente" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbl_TerminoExponente" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="2" attributes="0">
-                          <Component id="textFld_Tamaño1" alignment="2" min="-2" pref="40" max="-2" attributes="0"/>
-                          <Component id="btn_Definir1" alignment="2" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="txtFld_Exponente" alignment="2" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="btn_DefinirExponente" alignment="2" min="-2" pref="40" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="txtArea_Enunciado" min="-2" pref="50" max="-2" attributes="0"/>
+              <Component id="txtArea_IndicacionExponente" min="-2" pref="50" max="-2" attributes="0"/>
               <EmptySpace pref="68" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -152,6 +152,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Operadores con patr&#xf3;n: + - + - + ..."/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdBtn_MO1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="rdBtn_MO2">
       <Properties>
@@ -160,6 +163,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Operadores aleatorios."/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdBtn_MO2ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="rdBtn_MO3">
       <Properties>
@@ -168,6 +174,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Introducir por teclado los operadores."/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdBtn_MO3ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="rdBtn_ME1">
       <Properties>
@@ -176,6 +185,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Exponentes descendentes con excepci&#xf3;n al &#xfa;ltimo."/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdBtn_ME1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="rdBtn_ME2">
       <Properties>
@@ -184,8 +196,11 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Introducir por teclado  los exponentes."/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdBtn_ME2ActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="lbl_Tama&#xf1;o">
+    <Component class="javax.swing.JLabel" name="lbl_Operador">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="1"/>
@@ -196,12 +211,15 @@
         <Property name="text" type="java.lang.String" value="Operador"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btn_Definir">
+    <Component class="javax.swing.JButton" name="btn_DefinirOperador">
       <Properties>
         <Property name="text" type="java.lang.String" value="DEFINIR"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_DefinirOperadorActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="lbl_Tama&#xf1;o1">
+    <Component class="javax.swing.JLabel" name="lbl_Exponente">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="1"/>
@@ -212,36 +230,40 @@
         <Property name="text" type="java.lang.String" value="Exponente"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="textFld_Tama&#xf1;o1">
+    <Component class="javax.swing.JTextField" name="txtFld_Exponente">
       <Properties>
         <Property name="columns" type="int" value="10"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtFld_ExponenteFocusLost"/>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtFld_ExponenteKeyReleased"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btn_Definir1">
+    <Component class="javax.swing.JButton" name="btn_DefinirExponente">
       <Properties>
         <Property name="text" type="java.lang.String" value="DEFINIR"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_DefinirExponenteActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox1">
+    <Component class="javax.swing.JComboBox" name="cbBx_Operador">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="0"/>
         </Property>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="2">
-            <StringItem index="0" value="+"/>
-            <StringItem index="1" value="-"/>
-          </StringArray>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="listaModeloOperadores" type="code"/>
         </Property>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="lbl_TerminoOperador">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="0"/>
@@ -249,7 +271,7 @@
         <Property name="text" type="java.lang.String" value="T&#xe9;rmino n&#xb0;?"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextArea" name="txtArea_Enunciado">
+    <Component class="javax.swing.JTextArea" name="txtArea_IndicacionExponente">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -281,7 +303,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="lbl_TerminoExponente">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="0"/>
@@ -289,7 +311,7 @@
         <Property name="text" type="java.lang.String" value="T&#xe9;rmino n&#xb0;?"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextArea" name="txtArea_Enunciado1">
+    <Component class="javax.swing.JTextArea" name="txtArea_IndicacionOperador">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
