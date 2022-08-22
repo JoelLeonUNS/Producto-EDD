@@ -14,8 +14,8 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
     private Pila p;
     private Cola c;
 
-    private DefaultTableModel tablaModeloPila = new DefaultTableModel();
-    private DefaultTableModel tablaModeloCola = new DefaultTableModel();
+    private DefaultTableModel tablaModeloPila;
+    private DefaultTableModel tablaModeloCola;
 
     /**
      * Creates new form pnl_GeneralizadoIncial
@@ -37,13 +37,31 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
         c = new Cola(new String[tamañoPilaCola], -1, -1);
     }
 
-    private void llenarTablaModelo(DefaultTableModel tablaModelo, String PilaCola) {
-        tablaModelo.addColumn("Índice");
-        for (int i = 0; i < tamañoPilaCola; i++) {
-            tablaModelo.addColumn(String.valueOf(i));
+    private void llenarTablaModelo(String PilaCola) {
+
+        switch (PilaCola) {
+            case "Pila" -> {
+                tablaModeloPila = new DefaultTableModel();
+                tablaModeloPila.addColumn("Índice");
+                for (int i = 0; i < tamañoPilaCola; i++) {
+                    tablaModeloPila.addColumn(String.valueOf(i));
+                }
+                tablaModeloPila.addRow(new String[tamañoPilaCola + 1]);
+                tablaModeloPila.setValueAt(PilaCola, 0, 0);
+                tbl_Pila.setModel(tablaModeloPila);
+            }
+            case "Cola" -> {
+                tablaModeloCola = new DefaultTableModel();
+                tablaModeloCola.addColumn("Índice");
+                for (int i = 0; i < tamañoPilaCola; i++) {
+                    tablaModeloCola.addColumn(String.valueOf(i));
+                }
+                tablaModeloCola.addRow(new String[tamañoPilaCola + 1]);
+                tablaModeloCola.setValueAt(PilaCola, 0, 0);
+                tbl_Cola.setModel(tablaModeloCola);
+            }
         }
-        tablaModelo.addRow(new String[tamañoPilaCola + 1]);
-        tablaModelo.setValueAt(PilaCola, 0, 0);
+
     }
 
     private void editarIndicadorPila() {
@@ -55,9 +73,8 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
         lbl_Frente.setText("Frente: " + c.getFrente());
         lbl_Final.setText("Final: " + c.getFin());
     }
-    
+
     // ---------------------------------------------
-    
     public Pila getP() {
         return p;
     }
@@ -77,7 +94,7 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
     public DefaultTableModel getTablaModeloCola() {
         return tablaModeloCola;
     }
-    
+
     // ---------------------------------------------
     public int getTopePila() {
         return p.getTope();
@@ -223,7 +240,6 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
 
         tbl_Pila.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tbl_Pila.setForeground(new java.awt.Color(80, 80, 80));
-        tbl_Pila.setModel(tablaModeloPila);
         tbl_Pila.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         tbl_Pila.setAutoscrolls(false);
         tbl_Pila.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -244,7 +260,6 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
 
         tbl_Cola.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tbl_Cola.setForeground(new java.awt.Color(80, 80, 80));
-        tbl_Cola.setModel(tablaModeloCola);
         tbl_Cola.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         tbl_Cola.setEnabled(false);
         tbl_Cola.setFocusable(false);
@@ -373,10 +388,9 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
             btn_Definir.setEnabled(true);
             tamañoPilaCola = Integer.valueOf(txtFld_Tamaño.getText());
 
-            
             crearPilaCola();
-            llenarTablaModelo(tablaModeloPila, "Pila");
-            llenarTablaModelo(tablaModeloCola, "Cola");
+            llenarTablaModelo("Pila");
+            llenarTablaModelo("Cola");
             txtFld_InsertarPila.setEnabled(true);
             txtFld_InsertarCola.setEnabled(true);
             btn_Definir.setEnabled(false);

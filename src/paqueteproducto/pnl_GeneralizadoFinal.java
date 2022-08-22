@@ -35,7 +35,7 @@ public class pnl_GeneralizadoFinal extends javax.swing.JPanel {
         lbl_Frente.setText("Frente: " + c.getFrente());
         lbl_Final.setText("Final: " + c.getFin());
     }
-    
+
     private void editarTablaPilaCola() {
         for (int i = 0; i < tamañoPilaCola; i++) {
             tablaModeloPila.setValueAt(p.getArray()[i], 0, i + 1);
@@ -106,8 +106,6 @@ public class pnl_GeneralizadoFinal extends javax.swing.JPanel {
     }
 
     // ---------------------------------------------
-    
-    
     // ---------------------------------------------
     public void setTipOp(int tipOp) {
         this.tipOp = tipOp;
@@ -175,7 +173,6 @@ public class pnl_GeneralizadoFinal extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(70, 70, 70));
         jLabel2.setText("Pila - Cola");
 
-        scrll_TablaPila.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         scrll_TablaPila.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
         scrll_TablaPila.setAutoscrolls(true);
 
@@ -192,7 +189,6 @@ public class pnl_GeneralizadoFinal extends javax.swing.JPanel {
         tbl_Pila.getTableHeader().setReorderingAllowed(false);
         scrll_TablaPila.setViewportView(tbl_Pila);
 
-        scrll_TablaCola.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         scrll_TablaCola.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         tbl_Cola.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -309,7 +305,14 @@ public class pnl_GeneralizadoFinal extends javax.swing.JPanel {
         editarIndicadorPila();
         editarIndicadorCola();
         editarTablaPilaCola();
-        btn_Transformar.setEnabled(false);
+
+        /* implementar luego
+        if (p.getTope() == -1 && c.getFin() == -1) {
+            btn_Transformar.setEnabled(false);
+        } else {
+            btn_Transformar.setEnabled(true);
+        }
+         */
     }//GEN-LAST:event_btn_TransformarActionPerformed
 
 

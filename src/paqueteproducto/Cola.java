@@ -40,7 +40,7 @@ public class Cola {
             System.out.println("\n¡Cola vacía!\n");
         } else {
             x = array[frente];
-            array[frente] = " ";
+            array[frente] = null;
             if (frente == fin) {
                 frente = -1;
                 fin = -1;

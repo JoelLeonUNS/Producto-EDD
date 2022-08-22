@@ -107,7 +107,6 @@
     </Component>
     <Container class="javax.swing.JScrollPane" name="scrll_TablaPila">
       <Properties>
-        <Property name="horizontalScrollBarPolicy" type="int" value="31"/>
         <Property name="verticalScrollBarPolicy" type="int" value="21"/>
         <Property name="autoscrolls" type="boolean" value="true"/>
       </Properties>
@@ -141,7 +140,6 @@
     </Container>
     <Container class="javax.swing.JScrollPane" name="scrll_TablaCola">
       <Properties>
-        <Property name="horizontalScrollBarPolicy" type="int" value="31"/>
         <Property name="verticalScrollBarPolicy" type="int" value="21"/>
       </Properties>
       <AuxValues>

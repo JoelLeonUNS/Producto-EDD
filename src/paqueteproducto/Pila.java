@@ -40,7 +40,7 @@ public class Pila {
             System.out.println("\t==== Pila vacia ====");
         } else {
             x = array[tope];
-            array[tope] = " ";
+            array[tope] = null;
             if (fondo == tope) {
                 fondo = -1;
                 tope = -1;
