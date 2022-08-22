@@ -39,9 +39,47 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
         btnGrp_ME.add(rdBtn_ME1);
         btnGrp_ME.add(rdBtn_ME2);
     }
-    
-    // ---------------------------------------------
 
+    public boolean confirmarLlenadoDeMenu() {
+        boolean llenado = false;
+        if ((rdBtn_MO1.isSelected() || rdBtn_MO2.isSelected() || rdBtn_MO3.isSelected()) && (rdBtn_ME1.isSelected() || rdBtn_ME2.isSelected())) {
+            if (rdBtn_MO3.isSelected() && rdBtn_ME2.isSelected()) {
+                llenado = confirmarLlenadoDeOperador() && confirmarLlenadoDeExponente();
+            }
+            if (rdBtn_MO3.isSelected() && !rdBtn_ME2.isSelected()) {
+                llenado = confirmarLlenadoDeOperador();
+            }
+            if (!rdBtn_MO3.isSelected() && rdBtn_ME2.isSelected()) {
+                llenado = confirmarLlenadoDeExponente();
+            }
+            if (!rdBtn_MO3.isSelected() && !rdBtn_ME2.isSelected()) {
+                llenado = true;
+            }
+        }
+        return llenado;
+    }
+
+    public boolean confirmarLlenadoDeOperador() {
+        boolean llenado = false;
+        if (cOperador != null) { // primero se pregunta si ya sea creado el objeto
+            if (cOperador.getFin() == cOperador.getN()) {
+                llenado = true;
+            }
+        }
+        return llenado;
+    }
+
+    public boolean confirmarLlenadoDeExponente() {
+        boolean llenado = false;
+        if (cExponente != null) { // primero se pregunta si ya sea creado el objeto
+            if (cExponente.getFin() == cExponente.getN()) {
+                llenado = true;
+            }
+        }
+        return llenado;
+    }
+
+    // ---------------------------------------------
     public int getTipOp() {
         return tipOp;
     }
@@ -56,8 +94,8 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
 
     public Cola getcExponente() {
         return cExponente;
-    }  
-    
+    }
+
     // ---------------------------------------------
     public void setTamañoPilaCola(int tamañoPilaCola) {
         this.tamañoPilaCola = tamañoPilaCola;
@@ -300,18 +338,27 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void rdBtn_MO1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdBtn_MO1ActionPerformed
+        // verifica el estado actual de las opciones seleccionadas
+        confirmarLlenadoDeMenu();
+
         tipOp = 1;
         cbBx_Operador.setEnabled(false);
         btn_DefinirOperador.setEnabled(false);
     }//GEN-LAST:event_rdBtn_MO1ActionPerformed
 
     private void rdBtn_MO2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdBtn_MO2ActionPerformed
+        // verifica el estado actual de las opciones seleccionadas
+        confirmarLlenadoDeMenu();
+
         tipOp = 2;
         cbBx_Operador.setEnabled(false);
         btn_DefinirOperador.setEnabled(false);
     }//GEN-LAST:event_rdBtn_MO2ActionPerformed
 
     private void rdBtn_MO3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdBtn_MO3ActionPerformed
+        // verifica el estado actual de las opciones seleccionadas
+        confirmarLlenadoDeMenu();
+
         tipOp = 3;
         if (terminoOperador <= tamañoPilaCola) {
             cbBx_Operador.setEnabled(true);
@@ -321,21 +368,27 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
         if (terminoOperador < 1) {
             // solo una vez se crea la cola que contiene a los operadores
             cOperador = new Cola(new String[tamañoPilaCola], -1, -1);
-            
+
             terminoOperador++;
             lbl_TerminoOperador.setText("Término n°" + terminoOperador);
         }
     }//GEN-LAST:event_rdBtn_MO3ActionPerformed
 
     private void rdBtn_ME1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdBtn_ME1ActionPerformed
+        // verifica el estado actual de las opciones seleccionadas
+        confirmarLlenadoDeMenu();
+
         tipExp = 1;
         txtFld_Exponente.setEnabled(false);
         btn_DefinirExponente.setEnabled(false);
     }//GEN-LAST:event_rdBtn_ME1ActionPerformed
 
     private void rdBtn_ME2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdBtn_ME2ActionPerformed
+        // verifica el estado actual de las opciones seleccionadas
+        confirmarLlenadoDeMenu();
+
         tipExp = 2;
-        
+
         if (terminoExponente <= tamañoPilaCola) {
             txtFld_Exponente.setEnabled(true);
         }
@@ -343,11 +396,11 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
         if (terminoExponente < 1) {
             // solo una vez se crea la cola que contiene a los exponentes
             cExponente = new Cola(new String[tamañoPilaCola], -1, -1);
-            
+
             terminoExponente++;
             lbl_TerminoExponente.setText("Término n°" + terminoExponente);
-        }     
-        
+        }
+
     }//GEN-LAST:event_rdBtn_ME2ActionPerformed
 
     private void btn_DefinirOperadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DefinirOperadorActionPerformed
@@ -360,6 +413,9 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
             btn_DefinirOperador.setEnabled(false);
             cbBx_Operador.setEnabled(false);
             terminoOperador++;
+
+            // verifica el estado actual de la cola de Operadores y Menú
+            confirmarLlenadoDeMenu();
         }
 
         // prueba en consola
@@ -379,8 +435,11 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
             btn_DefinirExponente.setEnabled(false);
             txtFld_Exponente.setEnabled(false);
             terminoExponente++;
+
+            // verifica el estado actual de la cola de Exponentes y Menú
+            confirmarLlenadoDeMenu();
         }
-        
+
         // prueba en consola
         for (int i = 0; i <= cExponente.getFin(); i++) {
             System.out.print(cExponente.getArray()[i]);

@@ -73,6 +73,16 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
         lbl_Frente.setText("Frente: " + c.getFrente());
         lbl_Final.setText("Final: " + c.getFin());
     }
+    
+    public boolean confirmarLlenadoDeColaPila() {
+        boolean llenado = false;
+        if (p != null && c != null) { // primero se pregunta si ya sean creado los objetos
+            if (p.getTope() == p.getN() && c.getFin() == c.getN()) {
+                llenado = true;
+            }
+        }
+        return llenado;
+    }
 
     // ---------------------------------------------
     public Pila getP() {
@@ -419,6 +429,8 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
             tablaModeloPila.setValueAt(txtFld_InsertarPila.getText(), 0, p.getTope() + 1);
             // se suma 1 al tope de la pila, porque en la posición 0 (de la tabla) está la palabra "Pila"
             editarIndicadorPila();
+            // verifica el estado actual de la cola y pila
+            confirmarLlenadoDeColaPila();
         }
     }//GEN-LAST:event_btn_InsertarPilaActionPerformed
 
@@ -440,6 +452,8 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
             tablaModeloCola.setValueAt(txtFld_InsertarCola.getText(), 0, c.getFin() + 1);
             // se suma 1 al fin de la cola, porque en la posición 0 (de la tabla) está la palabra "Cola"
             editarIndicadorCola();
+            // verifica el estado actual de la cola y pila
+            confirmarLlenadoDeColaPila();
         }
     }//GEN-LAST:event_btn_InsertarColaActionPerformed
 
