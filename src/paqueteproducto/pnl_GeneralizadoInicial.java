@@ -64,12 +64,12 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
 
     }
 
-    private void editarIndicadorPila() {
+    public void editarIndicadorPila() {
         lbl_Fondo.setText("Fondo: " + p.getFondo());
         lbl_Tope.setText("Tope: " + p.getTope());
     }
 
-    private void editarIndicadorCola() {
+    public void editarIndicadorCola() {
         lbl_Frente.setText("Frente: " + c.getFrente());
         lbl_Final.setText("Final: " + c.getFin());
     }

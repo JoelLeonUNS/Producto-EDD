@@ -1,5 +1,6 @@
 package paqueteproducto;
 
+import javax.swing.JButton;
 import javax.swing.table.DefaultTableModel;
 
 public class pnl_GeneralizadoFinal extends javax.swing.JPanel {
@@ -106,6 +107,12 @@ public class pnl_GeneralizadoFinal extends javax.swing.JPanel {
     }
 
     // ---------------------------------------------
+
+    public JButton getBtn_Transformar() {
+        return btn_Transformar;
+    }
+    
+    
     // ---------------------------------------------
     public void setTipOp(int tipOp) {
         this.tipOp = tipOp;
@@ -223,6 +230,7 @@ public class pnl_GeneralizadoFinal extends javax.swing.JPanel {
         lbl_NotacionInfija.setForeground(new java.awt.Color(70, 70, 70));
         lbl_NotacionInfija.setText("Notación Infija");
 
+        txtFld_NotacionInfija.setEditable(false);
         txtFld_NotacionInfija.setColumns(45);
         txtFld_NotacionInfija.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
@@ -306,13 +314,11 @@ public class pnl_GeneralizadoFinal extends javax.swing.JPanel {
         editarIndicadorCola();
         editarTablaPilaCola();
 
-        /* implementar luego
         if (p.getTope() == -1 && c.getFin() == -1) {
             btn_Transformar.setEnabled(false);
         } else {
             btn_Transformar.setEnabled(true);
         }
-         */
     }//GEN-LAST:event_btn_TransformarActionPerformed
 
 

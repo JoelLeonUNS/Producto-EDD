@@ -1,6 +1,10 @@
 package paqueteproducto;
 
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
 
 public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
 
@@ -8,7 +12,7 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
      * Variables que se pueden modificar
      */
     private int tipOp, tipExp;
-    private int terminoOperador = 0, terminoExponente = 0;
+    private int terminoOperador, terminoExponente;
     private int tamañoPilaCola;
     private Cola cOperador, cExponente;
     private DefaultComboBoxModel<String> listaModeloOperadores = new DefaultComboBoxModel<String>();
@@ -78,6 +82,8 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
         }
         return llenado;
     }
+    
+
 
     // ---------------------------------------------
     public int getTipOp() {
@@ -95,11 +101,61 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
     public Cola getcExponente() {
         return cExponente;
     }
+    
+    //
+    public JRadioButton getRdBtn_ME2() {
+        return rdBtn_ME2;
+    }
+
+    public JRadioButton getRdBtn_MO3() {
+        return rdBtn_MO3;
+    }
+
+    public JButton getBtn_DefinirOperador() {
+        return btn_DefinirOperador;
+    }
+
+    public JComboBox<String> getCbBx_Operador() {
+        return cbBx_Operador;
+    }
+
+    public JTextField getTxtFld_Exponente() {
+        return txtFld_Exponente;
+    }
+
+    public JButton getBtn_DefinirExponente() {
+        return btn_DefinirExponente;
+    }
+
+    
+    
+    
+    
+    
 
     // ---------------------------------------------
+    
+    public void setTerminoExponente(int terminoExponente) {
+        this.terminoExponente = terminoExponente;
+    }
+    
+    public void setTerminoOperador(int terminoOperador) {
+        this.terminoOperador = terminoOperador;
+    }
+    
     public void setTamañoPilaCola(int tamañoPilaCola) {
         this.tamañoPilaCola = tamañoPilaCola;
     }
+
+    public void setcOperador(Cola cOperador) {
+        this.cOperador = cOperador;
+    }
+
+    public void setcExponente(Cola cExponente) {
+        this.cExponente = cExponente;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -366,9 +422,6 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
         }
 
         if (terminoOperador < 1) {
-            // solo una vez se crea la cola que contiene a los operadores
-            cOperador = new Cola(new String[tamañoPilaCola], -1, -1);
-
             terminoOperador++;
             lbl_TerminoOperador.setText("Término n°" + terminoOperador);
         }
@@ -394,9 +447,6 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
         }
 
         if (terminoExponente < 1) {
-            // solo una vez se crea la cola que contiene a los exponentes
-            cExponente = new Cola(new String[tamañoPilaCola], -1, -1);
-
             terminoExponente++;
             lbl_TerminoExponente.setText("Término n°" + terminoExponente);
         }

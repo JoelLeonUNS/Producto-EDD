@@ -228,6 +228,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtFld_NotacionInfija">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="columns" type="int" value="45"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="0"/>

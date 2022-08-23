@@ -51,8 +51,12 @@ public class pnl_Generalizado extends javax.swing.JPanel {
     private void activarBtnSiguiente_1() {
         if (gInicial.confirmarLlenadoDeColaPila()) {
             enlazarPanel(gSiguiente);
+
             actualizarTamañoPilaCola();
-            
+            crearColaEOyComprobarCambioDeTamaño();
+            resetearTerminoOperador();
+            resetearTerminoExponente();
+
             btn_Siguiente.setEnabled(true);
             btn_Atras.setEnabled(true);
         } else {
@@ -65,11 +69,44 @@ public class pnl_Generalizado extends javax.swing.JPanel {
         if (gSiguiente.confirmarLlenadoDeMenu()) {
             enlazarPanel(gFinal);
             actualizarComponentes();
-            
+
             btn_Siguiente.setEnabled(false);
         } else {
             JOptionPane.showMessageDialog(null, "Complete todos los datos para poder seguir, por favor.");
             cont--;
+        }
+
+        // comprobación del botón transformar
+        if (gInicial.getP().getTope() != -1 && gInicial.getC().getFin() != -1) {
+            gFinal.getBtn_Transformar().setEnabled(true);
+        }
+    }
+
+    private void crearColaEOyComprobarCambioDeTamaño() {
+        // esto es para crear la cola si es que el tamaño se ha modificado
+        if (gSiguiente.getcOperador() == null) {
+            gSiguiente.setcOperador(new Cola(new String[gInicial.getTamañoPilaCola()], -1, -1));
+        } else {
+            if (gSiguiente.getcOperador().getFin() == -1) {
+                gSiguiente.setcOperador(new Cola(new String[gInicial.getTamañoPilaCola()], -1, -1));
+            } else {
+                if (gSiguiente.getcOperador().getN() != gInicial.getTamañoPilaCola() - 1) {
+                    JOptionPane.showMessageDialog(null, "El tamaño de la pila y cola se han cambiado, \npor ello los operadores que se guardaron se \nhan borrado, puesto que antes se habían \nconsiderado solo " + (gSiguiente.getcOperador().getN() + 1) + " operadores.");
+                    gSiguiente.setcOperador(new Cola(new String[gInicial.getTamañoPilaCola()], -1, -1));
+                }
+            }
+        }
+        if (gSiguiente.getcExponente() == null) {
+            gSiguiente.setcExponente(new Cola(new String[gInicial.getTamañoPilaCola()], -1, -1));
+        } else {
+            if (gSiguiente.getcExponente().getFin() == -1) {
+                gSiguiente.setcExponente(new Cola(new String[gInicial.getTamañoPilaCola()], -1, -1));
+            } else {
+                if (gSiguiente.getcExponente().getN() != gInicial.getTamañoPilaCola() - 1) {
+                    JOptionPane.showMessageDialog(null, "El tamaño de la pila y cola se han cambiado, \npor ello los exponentes que guardaron se \nhan borrado, puesto que antes se habían \nconsiderado solo " + (gSiguiente.getcExponente().getN() + 1) + " exponentes.");
+                    gSiguiente.setcExponente(new Cola(new String[gInicial.getTamañoPilaCola()], -1, -1));
+                }
+            }
         }
     }
 
@@ -109,6 +146,38 @@ public class pnl_Generalizado extends javax.swing.JPanel {
 
     private void actualizarcExponente() {
         gFinal.setcExponente(gSiguiente.getcExponente());
+    }
+
+    private void resetearTerminoOperador() {
+        if (gSiguiente.getcOperador() != null) { // primero se pregunta si ya sea creado el objeto
+            if (gSiguiente.getcOperador().getFin() == -1) {
+                gSiguiente.setTerminoOperador(0);
+
+                // si está selecionado, entonces ya debe estar activado, pues el
+                // el término operador ya se ha reseteado
+                if (gSiguiente.getRdBtn_MO3().isSelected()) {
+                    gSiguiente.getCbBx_Operador().setEnabled(true);
+                    gSiguiente.getBtn_DefinirOperador().setEnabled(true);
+                }
+            }
+        }
+    }
+
+    private void resetearTerminoExponente() {
+        if (gSiguiente.getcExponente() != null) { // primero se pregunta si ya sea creado el objeto
+            if (gSiguiente.getcExponente().getFin() == -1) {
+                gSiguiente.setTerminoExponente(0);
+
+                // si está selecionado, entonces ya debe estar activado, pues el
+                // el término exponente ya se ha reseteado
+                if (gSiguiente.getRdBtn_ME2().isSelected()) {
+                    gSiguiente.getTxtFld_Exponente().setEnabled(true);
+                    if (!gSiguiente.getTxtFld_Exponente().getText().equals("")) {
+                        gSiguiente.getBtn_DefinirExponente().setEnabled(true);
+                    }
+                }
+            }
+        }
     }
 
     /**
@@ -197,7 +266,7 @@ public class pnl_Generalizado extends javax.swing.JPanel {
                 activarBtnSiguiente_1();
             }
             case 2 -> {
-                activarBtnSiguiente_2();  
+                activarBtnSiguiente_2();
             }
         }
     }//GEN-LAST:event_btn_SiguienteActionPerformed
@@ -209,15 +278,23 @@ public class pnl_Generalizado extends javax.swing.JPanel {
                 btn_Atras.setEnabled(false);
                 btn_Siguiente.setEnabled(true);
                 enlazarPanel(gInicial);
+                // se actualiza
+                gInicial.editarIndicadorPila();
+                gInicial.editarIndicadorCola();
             }
             case 1 -> {
                 btn_Siguiente.setEnabled(true);
                 btn_Atras.setEnabled(true);
                 enlazarPanel(gSiguiente);
+                // se actualiza
+                resetearTerminoOperador();
+                resetearTerminoExponente();
+
             }
             case 2 -> {
                 enlazarPanel(gFinal);
                 btn_Siguiente.setEnabled(false);
+
             }
         }
     }//GEN-LAST:event_btn_AtrasActionPerformed
