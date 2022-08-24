@@ -3,6 +3,7 @@ package paqueteproducto;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
@@ -119,6 +120,14 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
         return cbBx_Operador;
     }
 
+    public JLabel getLbl_TerminoExponente() {
+        return lbl_TerminoExponente;
+    }
+
+    public JLabel getLbl_TerminoOperador() {
+        return lbl_TerminoOperador;
+    }
+    
     public JTextField getTxtFld_Exponente() {
         return txtFld_Exponente;
     }
@@ -198,6 +207,7 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
         lbl_MenuExponentes.setText("Menú: Exponentes");
 
         rdBtn_MO1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        rdBtn_MO1.setForeground(new java.awt.Color(80, 80, 80));
         rdBtn_MO1.setText("Operadores con patrón: + - + - + ...");
         rdBtn_MO1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -206,6 +216,7 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
         });
 
         rdBtn_MO2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        rdBtn_MO2.setForeground(new java.awt.Color(80, 80, 80));
         rdBtn_MO2.setText("Operadores aleatorios.");
         rdBtn_MO2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -214,6 +225,7 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
         });
 
         rdBtn_MO3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        rdBtn_MO3.setForeground(new java.awt.Color(80, 80, 80));
         rdBtn_MO3.setText("Introducir por teclado los operadores.");
         rdBtn_MO3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -222,6 +234,7 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
         });
 
         rdBtn_ME1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        rdBtn_ME1.setForeground(new java.awt.Color(80, 80, 80));
         rdBtn_ME1.setText("Exponentes descendentes con excepción al último.");
         rdBtn_ME1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -230,6 +243,7 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
         });
 
         rdBtn_ME2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        rdBtn_ME2.setForeground(new java.awt.Color(80, 80, 80));
         rdBtn_ME2.setText("Introducir por teclado  los exponentes.");
         rdBtn_ME2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -241,7 +255,9 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
         lbl_Operador.setForeground(new java.awt.Color(70, 70, 70));
         lbl_Operador.setText("Operador");
 
+        btn_DefinirOperador.setForeground(new java.awt.Color(70, 70, 70));
         btn_DefinirOperador.setText("DEFINIR");
+        btn_DefinirOperador.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_DefinirOperador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_DefinirOperadorActionPerformed(evt);
@@ -254,6 +270,7 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
 
         txtFld_Exponente.setColumns(10);
         txtFld_Exponente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtFld_Exponente.setForeground(new java.awt.Color(70, 70, 70));
         txtFld_Exponente.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 txtFld_ExponenteFocusLost(evt);
@@ -265,7 +282,9 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
             }
         });
 
+        btn_DefinirExponente.setForeground(new java.awt.Color(70, 70, 70));
         btn_DefinirExponente.setText("DEFINIR");
+        btn_DefinirExponente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_DefinirExponente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_DefinirExponenteActionPerformed(evt);
@@ -273,9 +292,11 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
         });
 
         cbBx_Operador.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cbBx_Operador.setForeground(new java.awt.Color(70, 70, 70));
         cbBx_Operador.setModel(listaModeloOperadores);
 
         lbl_TerminoOperador.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lbl_TerminoOperador.setForeground(new java.awt.Color(80, 80, 80));
         lbl_TerminoOperador.setText("Término n°?");
 
         txtArea_IndicacionExponente.setEditable(false);
@@ -294,6 +315,7 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
         txtArea_IndicacionExponente.setMinimumSize(new java.awt.Dimension(750, 110));
 
         lbl_TerminoExponente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lbl_TerminoExponente.setForeground(new java.awt.Color(80, 80, 80));
         lbl_TerminoExponente.setText("Término n°?");
 
         txtArea_IndicacionOperador.setEditable(false);

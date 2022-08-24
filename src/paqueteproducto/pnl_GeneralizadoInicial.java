@@ -2,6 +2,9 @@ package paqueteproducto;
 
 import java.util.Scanner;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
@@ -10,6 +13,7 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
      * Variables que se pueden modificar
      */
     Scanner input = new Scanner(System.in);
+    private final int anchoTabla = 465; // valor constante
     private int tamañoPilaCola;
     private Pila p;
     private Cola c;
@@ -38,7 +42,6 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
     }
 
     private void llenarTablaModelo(String PilaCola) {
-
         switch (PilaCola) {
             case "Pila" -> {
                 tablaModeloPila = new DefaultTableModel();
@@ -49,6 +52,11 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
                 tablaModeloPila.addRow(new String[tamañoPilaCola + 1]);
                 tablaModeloPila.setValueAt(PilaCola, 0, 0);
                 tbl_Pila.setModel(tablaModeloPila);
+
+                // centrar los datos
+                centrarColumna(tbl_Pila);
+                definirAnchoDeColumnas(tbl_Pila);
+
             }
             case "Cola" -> {
                 tablaModeloCola = new DefaultTableModel();
@@ -59,6 +67,10 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
                 tablaModeloCola.addRow(new String[tamañoPilaCola + 1]);
                 tablaModeloCola.setValueAt(PilaCola, 0, 0);
                 tbl_Cola.setModel(tablaModeloCola);
+
+                // centrar los datos
+                centrarColumna(tbl_Cola);
+                definirAnchoDeColumnas(tbl_Cola);
             }
         }
 
@@ -73,7 +85,32 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
         lbl_Frente.setText("Frente: " + c.getFrente());
         lbl_Final.setText("Final: " + c.getFin());
     }
-    
+
+    private void centrarColumna(JTable tbl) {
+        DefaultTableCellRenderer cellRender = new DefaultTableCellRenderer();
+        cellRender.setHorizontalAlignment(SwingConstants.CENTER);
+        // centrar cabecera
+        ((DefaultTableCellRenderer) tbl.getTableHeader().getDefaultRenderer()).setHorizontalAlignment(SwingConstants.CENTER);
+
+        // centrar los datos
+        for (int i = 0; i <= tamañoPilaCola; i++) {
+            tbl.getColumnModel().getColumn(i).setCellRenderer(cellRender);
+        }
+    }
+
+    private void definirAnchoDeColumnas(JTable tbl) {
+        int anchoJusto = anchoTabla / (tamañoPilaCola + 1);
+        if (anchoJusto < 60) {
+            tbl.setAutoResizeMode(0);
+            for (int i = 0; i <= tamañoPilaCola; i++) {
+                tbl.getColumnModel().getColumn(i).setPreferredWidth(60);
+            }
+        } else {
+            tbl.setAutoResizeMode(2);
+        }
+
+    }
+
     public boolean confirmarLlenadoDeColaPila() {
         boolean llenado = false;
         if (p != null && c != null) { // primero se pregunta si ya sean creado los objetos
@@ -181,6 +218,7 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
 
         txtFld_Tamaño.setColumns(10);
         txtFld_Tamaño.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtFld_Tamaño.setForeground(new java.awt.Color(70, 70, 70));
         txtFld_Tamaño.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 txtFld_TamañoFocusLost(evt);
@@ -192,7 +230,9 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
             }
         });
 
+        btn_Definir.setForeground(new java.awt.Color(70, 70, 70));
         btn_Definir.setText("DEFINIR");
+        btn_Definir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_Definir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_DefinirActionPerformed(evt);
@@ -207,6 +247,7 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
 
         txtFld_InsertarPila.setColumns(10);
         txtFld_InsertarPila.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtFld_InsertarPila.setForeground(new java.awt.Color(70, 70, 70));
         txtFld_InsertarPila.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 txtFld_InsertarPilaFocusLost(evt);
@@ -218,14 +259,18 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
             }
         });
 
+        btn_InsertarPila.setForeground(new java.awt.Color(70, 70, 70));
         btn_InsertarPila.setText("PILA");
+        btn_InsertarPila.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_InsertarPila.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_InsertarPilaActionPerformed(evt);
             }
         });
 
+        btn_InsertarCola.setForeground(new java.awt.Color(70, 70, 70));
         btn_InsertarCola.setText("COLA");
+        btn_InsertarCola.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_InsertarCola.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_InsertarColaActionPerformed(evt);
@@ -234,6 +279,7 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
 
         txtFld_InsertarCola.setColumns(10);
         txtFld_InsertarCola.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtFld_InsertarCola.setForeground(new java.awt.Color(70, 70, 70));
         txtFld_InsertarCola.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 txtFld_InsertarColaFocusLost(evt);
@@ -250,14 +296,11 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
 
         tbl_Pila.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tbl_Pila.setForeground(new java.awt.Color(80, 80, 80));
-        tbl_Pila.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        tbl_Pila.setAutoscrolls(false);
         tbl_Pila.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         tbl_Pila.setEnabled(false);
-        tbl_Pila.setFocusable(false);
-        tbl_Pila.setRequestFocusEnabled(false);
+        tbl_Pila.setGridColor(new java.awt.Color(255, 255, 255));
+        tbl_Pila.setName(""); // NOI18N
         tbl_Pila.setRowHeight(40);
-        tbl_Pila.setRowSelectionAllowed(false);
         tbl_Pila.getTableHeader().setResizingAllowed(false);
         tbl_Pila.getTableHeader().setReorderingAllowed(false);
         scrll_TablaPila.setViewportView(tbl_Pila);
@@ -270,12 +313,9 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
 
         tbl_Cola.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tbl_Cola.setForeground(new java.awt.Color(80, 80, 80));
-        tbl_Cola.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         tbl_Cola.setEnabled(false);
-        tbl_Cola.setFocusable(false);
-        tbl_Cola.setRequestFocusEnabled(false);
+        tbl_Cola.setGridColor(new java.awt.Color(255, 255, 255));
         tbl_Cola.setRowHeight(40);
-        tbl_Cola.setRowSelectionAllowed(false);
         tbl_Cola.getTableHeader().setResizingAllowed(false);
         tbl_Cola.getTableHeader().setReorderingAllowed(false);
         scrll_TablaCola.setViewportView(tbl_Cola);
@@ -328,8 +368,8 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(lbl_PilaCola, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(scrll_TablaPila, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
-                            .addComponent(scrll_TablaCola))
+                            .addComponent(scrll_TablaCola, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
+                            .addComponent(scrll_TablaPila, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbl_Frente)
@@ -371,7 +411,7 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
                                     .addComponent(txtFld_InsertarCola, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(jSeparator2))
-                        .addGap(63, 63, 63))
+                        .addGap(60, 60, 60))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lbl_PilaCola)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -381,15 +421,15 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
                                 .addGap(24, 24, 24)
                                 .addComponent(scrll_TablaCola, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
+                                .addGap(22, 22, 22)
                                 .addComponent(lbl_Fondo)
-                                .addGap(18, 18, 18)
+                                .addGap(20, 20, 20)
                                 .addComponent(lbl_Tope)
-                                .addGap(29, 29, 29)
+                                .addGap(44, 44, 44)
                                 .addComponent(lbl_Frente)
-                                .addGap(18, 18, 18)
+                                .addGap(20, 20, 20)
                                 .addComponent(lbl_Final)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap())))
         );
     }// </editor-fold>//GEN-END:initComponents
 

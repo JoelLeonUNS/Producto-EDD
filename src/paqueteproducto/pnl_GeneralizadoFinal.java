@@ -1,6 +1,9 @@
 package paqueteproducto;
 
 import javax.swing.JButton;
+import javax.swing.JTable;
+import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 public class pnl_GeneralizadoFinal extends javax.swing.JPanel {
@@ -8,6 +11,7 @@ public class pnl_GeneralizadoFinal extends javax.swing.JPanel {
     /**
      * Variables que se pueden modificar
      */
+    private final int anchoTabla = 500;
     private int itr;
     private int tipOp, tipExp;
     private int tamañoPilaCola;
@@ -49,14 +53,44 @@ public class pnl_GeneralizadoFinal extends javax.swing.JPanel {
     public void activarSetTablaModelo(boolean estado) {
         if (estado) {
             tbl_Pila.setModel(tablaModeloPila);
+            centrarColumna(tbl_Pila);
+            definirAnchoDeColumnas(tbl_Pila);
+            
             tbl_Cola.setModel(tablaModeloCola);
-
+            centrarColumna(tbl_Cola);
+            definirAnchoDeColumnas(tbl_Cola);
+            
             // también 
             editarIndicadorPila();
             editarIndicadorCola();
         }
     }
+    
+    private void centrarColumna(JTable tbl) {
+        DefaultTableCellRenderer cellRender = new DefaultTableCellRenderer();
+        cellRender.setHorizontalAlignment(SwingConstants.CENTER);
+        // centrar cabecera
+        ((DefaultTableCellRenderer) tbl.getTableHeader().getDefaultRenderer()).setHorizontalAlignment(SwingConstants.CENTER);
+        
+        // centrar los datos
+        for (int i = 0; i <= tamañoPilaCola; i++) {
+            tbl.getColumnModel().getColumn(i).setCellRenderer(cellRender);
+        }
+    }
+    
+    private void definirAnchoDeColumnas(JTable tbl) {
+        int anchoJusto = anchoTabla / (tamañoPilaCola + 1);
+        if (anchoJusto < 60) {
+            tbl.setAutoResizeMode(0);
+            for (int i = 0; i <= tamañoPilaCola; i++) {
+                tbl.getColumnModel().getColumn(i).setPreferredWidth(60);
+            }
+        } else {
+            tbl.setAutoResizeMode(2);
+        }
 
+    }
+    
     //
     private String transformacion(int tipOp, int tipExp) {
         String notInf = "";
@@ -189,6 +223,7 @@ public class pnl_GeneralizadoFinal extends javax.swing.JPanel {
         tbl_Pila.setAutoscrolls(false);
         tbl_Pila.setEnabled(false);
         tbl_Pila.setFocusable(false);
+        tbl_Pila.setGridColor(new java.awt.Color(255, 255, 255));
         tbl_Pila.setRequestFocusEnabled(false);
         tbl_Pila.setRowHeight(40);
         tbl_Pila.setRowSelectionAllowed(false);
@@ -203,6 +238,8 @@ public class pnl_GeneralizadoFinal extends javax.swing.JPanel {
         tbl_Cola.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         tbl_Cola.setEnabled(false);
         tbl_Cola.setFocusable(false);
+        tbl_Cola.setGridColor(new java.awt.Color(255, 255, 255));
+        tbl_Cola.setInheritsPopupMenu(true);
         tbl_Cola.setRequestFocusEnabled(false);
         tbl_Cola.setRowHeight(40);
         tbl_Cola.setRowSelectionAllowed(false);
@@ -233,9 +270,12 @@ public class pnl_GeneralizadoFinal extends javax.swing.JPanel {
         txtFld_NotacionInfija.setEditable(false);
         txtFld_NotacionInfija.setColumns(45);
         txtFld_NotacionInfija.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtFld_NotacionInfija.setForeground(new java.awt.Color(70, 70, 70));
 
         btn_Transformar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btn_Transformar.setForeground(new java.awt.Color(70, 70, 70));
         btn_Transformar.setText("TRANSFORMAR");
+        btn_Transformar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_Transformar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_TransformarActionPerformed(evt);
@@ -248,15 +288,15 @@ public class pnl_GeneralizadoFinal extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 704, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(lbl_NotacionInfija, javax.swing.GroupLayout.Alignment.LEADING))
                     .addComponent(jLabel2)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(scrll_TablaPila, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(scrll_TablaCola, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(scrll_TablaCola, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+                            .addComponent(scrll_TablaPila))
                         .addGap(50, 50, 50)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbl_Frente)
@@ -264,9 +304,9 @@ public class pnl_GeneralizadoFinal extends javax.swing.JPanel {
                             .addComponent(lbl_Tope)
                             .addComponent(lbl_Final)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtFld_NotacionInfija, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtFld_NotacionInfija, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btn_Transformar)))
+                        .addComponent(btn_Transformar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -274,23 +314,21 @@ public class pnl_GeneralizadoFinal extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addComponent(jLabel2)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(lbl_Fondo)
-                        .addGap(18, 18, 18)
-                        .addComponent(lbl_Tope))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(scrll_TablaPila, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scrll_TablaCola, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
+                        .addComponent(scrll_TablaPila, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(scrll_TablaCola, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lbl_Fondo)
+                        .addGap(20, 20, 20)
+                        .addComponent(lbl_Tope)
+                        .addGap(32, 32, 32)
                         .addComponent(lbl_Frente)
-                        .addGap(18, 18, 18)
-                        .addComponent(lbl_Final)))
+                        .addGap(20, 20, 20)
+                        .addComponent(lbl_Final)
+                        .addGap(10, 10, 10)))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)

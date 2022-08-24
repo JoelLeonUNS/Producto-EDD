@@ -156,6 +156,8 @@ public class pnl_Generalizado extends javax.swing.JPanel {
                 // si está selecionado, entonces ya debe estar activado, pues el
                 // el término operador ya se ha reseteado
                 if (gSiguiente.getRdBtn_MO3().isSelected()) {
+                    gSiguiente.setTerminoOperador(1);
+                    gSiguiente.getLbl_TerminoOperador().setText("Término n°1");
                     gSiguiente.getCbBx_Operador().setEnabled(true);
                     gSiguiente.getBtn_DefinirOperador().setEnabled(true);
                 }
@@ -171,6 +173,8 @@ public class pnl_Generalizado extends javax.swing.JPanel {
                 // si está selecionado, entonces ya debe estar activado, pues el
                 // el término exponente ya se ha reseteado
                 if (gSiguiente.getRdBtn_ME2().isSelected()) {
+                    gSiguiente.setTerminoExponente(1);
+                    gSiguiente.getLbl_TerminoExponente().setText("Término n°1");
                     gSiguiente.getTxtFld_Exponente().setEnabled(true);
                     if (!gSiguiente.getTxtFld_Exponente().getText().equals("")) {
                         gSiguiente.getBtn_DefinirExponente().setEnabled(true);
@@ -200,7 +204,9 @@ public class pnl_Generalizado extends javax.swing.JPanel {
         pnl_AtrasSiguiente.setBackground(new java.awt.Color(245, 245, 245));
 
         btn_Siguiente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btn_Siguiente.setForeground(new java.awt.Color(70, 70, 70));
         btn_Siguiente.setText("SIGUIENTE");
+        btn_Siguiente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_Siguiente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_SiguienteActionPerformed(evt);
@@ -208,7 +214,9 @@ public class pnl_Generalizado extends javax.swing.JPanel {
         });
 
         btn_Atras.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btn_Atras.setForeground(new java.awt.Color(70, 70, 70));
         btn_Atras.setText("ATRÁS");
+        btn_Atras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_Atras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_AtrasActionPerformed(evt);

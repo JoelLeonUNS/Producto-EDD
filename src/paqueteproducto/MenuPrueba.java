@@ -144,12 +144,13 @@ public class MenuPrueba {
 
     public static String transformacion(Cola c, Pila p, int longitud, int tipOp, int tipExp) {
         String notInf = "";
-        String x, exp; // para almacenar el valor que retorna la cola al hacer la supresión
+        String x, exp, operador; // para almacenar el valor que retorna la cola al hacer la supresión
 
         switch (tipExp) {
             case 1 -> { // 15*x
                 for (int i = 0; i < longitud; i++) {
-                    notInf += ((i != 0 || !operador(tipOp).equals("+")) ? operador(tipOp) : ""); // cambio
+                    operador = operador(tipOp); // cambio
+                    notInf += ((i != 0 || !operador.equals("+")) ? operador : ""); // cambio
                     x = c.suprimir();
                     notInf += (!x.equals("1") ? x + "*" : "");
                     notInf += p.pop(); // se hace pop y se disminuye en 1 el tope
@@ -159,7 +160,8 @@ public class MenuPrueba {
             }
             case 2 -> {
                 for (int i = 0; i < longitud; i++) {
-                    notInf += ((i != 0 || !operador(tipOp).equals("+")) ? operador(tipOp) : ""); // cambio
+                    operador = operador(tipOp); // cambio
+                    notInf += ((i != 0 || !operador.equals("+")) ? operador : ""); // cambio
                     x = c.suprimir();
                     notInf += (!x.equals("1") ? x + "*" : "");
                     notInf += p.pop();
@@ -178,7 +180,7 @@ public class MenuPrueba {
         return "\n" + notInf + "\n";
     }
 
-    static String operador(int tipOp) {
+    static String operador(int tipOp) {// 4a + 3b
         String operador = "";
 
         switch (tipOp) {
@@ -190,7 +192,7 @@ public class MenuPrueba {
                 operador = (Math.round((Math.random() + 1)) == 1) ? "-" : "+";
             }
             case 3 -> {
-                operador = colaOperador.suprimir();
+                operador = colaOperador.suprimir(); // cambio
             }
         }
         return operador;

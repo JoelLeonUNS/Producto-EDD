@@ -23,7 +23,7 @@ public class Pila {
     public void push(String x) {
         if (tope >= n) {
             JOptionPane.showMessageDialog(null, "¡Pila llena!");
-            System.out.println("\t==== Pila llena ===");
+            System.out.println("¡Pila llena!");
         } else {
             tope = tope + 1;
             array[tope] = x;
@@ -37,7 +37,7 @@ public class Pila {
         String x = "";
         if (tope == -1) {
             JOptionPane.showMessageDialog(null, "¡Pila vacía!");
-            System.out.println("\t==== Pila vacia ====");
+            System.out.println("¡Pila vacia!");
         } else {
             x = array[tope];
             array[tope] = null;
