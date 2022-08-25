@@ -88,7 +88,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         lbl_Inicio.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbl_Inicio.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_Inicio.setText("Inicio");
+        lbl_Inicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/inicioE.png"))); // NOI18N
+        lbl_Inicio.setText(" Inicio");
 
         lbl_Presentacion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lbl_Presentacion.setForeground(new java.awt.Color(255, 255, 255));
@@ -110,7 +111,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         lbl_Problema.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbl_Problema.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_Problema.setText("Problema");
+        lbl_Problema.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/problemaE.png"))); // NOI18N
+        lbl_Problema.setText(" Problema");
 
         lbl_Propuesto.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lbl_Propuesto.setForeground(new java.awt.Color(255, 255, 255));
@@ -156,16 +158,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         pnl_LateralLayout.setHorizontalGroup(
             pnl_LateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_LateralLayout.createSequentialGroup()
-                .addGroup(pnl_LateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbl_Presentacion, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_Propuesto, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_Generalizado, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(pnl_LateralLayout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addGroup(pnl_LateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_Inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl_Problema, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(lbl_LogoUNS, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnl_LateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lbl_Inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_Problema, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnl_LateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(lbl_Generalizado, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lbl_Presentacion, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                        .addComponent(lbl_Propuesto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                        .addComponent(lbl_LogoUNS, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         pnl_LateralLayout.setVerticalGroup(
@@ -180,8 +180,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addComponent(lbl_Problema, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
                 .addComponent(lbl_Propuesto, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(lbl_Generalizado, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addComponent(lbl_Generalizado, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         getContentPane().add(pnl_Lateral, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 600));

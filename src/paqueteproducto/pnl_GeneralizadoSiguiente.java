@@ -83,8 +83,6 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
         }
         return llenado;
     }
-    
-
 
     // ---------------------------------------------
     public int getTipOp() {
