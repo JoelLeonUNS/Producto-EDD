@@ -2,18 +2,17 @@ package paqueteproducto;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Component;
-import java.awt.Graphics;
-import java.awt.Insets;
 import javax.swing.JPanel;
-import javax.swing.border.Border;
 
 public class VentanaPrincipal extends javax.swing.JFrame {
 
     /**
      * Variables que se pueden modificar
      */
-    private final int diametro = 10;
+    private final Color cRojoOscuro = new Color(175, 33, 81);
+    private final Color cRojoClaro = new Color(216, 47, 75);
+    private final Color cOscuro = new Color(51, 51, 51);
+    
     private pnl_Presentacion presentacion = new pnl_Presentacion();
     private pnl_Propuesto propuesto = new pnl_Propuesto();
     private pnl_Generalizado generalizado = new pnl_Generalizado();
@@ -24,41 +23,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public VentanaPrincipal() {
         initComponents();
         enlazarPanel(presentacion);
+        lbl_IndicadorPresentacion.setBackground(cRojoOscuro);
         setLocationRelativeTo(null);
     }
 
     /**
      * Métodos que se pueden modificar
      */
-    
     private void enlazarPanel(JPanel panel) {
         panel.setSize(850, 600);
         panel.setLocation(0, 0);
-        
+
         pnl_Principal.removeAll();
         pnl_Principal.add(panel, BorderLayout.CENTER);
         pnl_Principal.revalidate();
         pnl_Principal.repaint();
-    }
-    
-    private Border bordeRedondeado() {
-        Border brdRnd = new Border() {
-            @Override
-            public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
-                g.drawRoundRect(x, y, width - 1, height - 1, diametro, diametro);
-            }
-            
-            @Override
-            public Insets getBorderInsets(Component c) {
-                return new Insets(diametro + 1, diametro + 1, diametro + 2, diametro);
-            }
-            
-            @Override
-            public boolean isBorderOpaque() {
-                return true;
-            }
-        };
-        return brdRnd;
     }
 
     /**
@@ -73,23 +52,31 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         pnl_Lateral = new javax.swing.JPanel();
         lbl_Inicio = new javax.swing.JLabel();
         lbl_Presentacion = new javax.swing.JLabel();
+        lbl_IndicadorPresentacion = new javax.swing.JLabel();
         lbl_Problema = new javax.swing.JLabel();
         lbl_Propuesto = new javax.swing.JLabel();
+        lbl_IndicadorPropuesto = new javax.swing.JLabel();
         lbl_Generalizado = new javax.swing.JLabel();
+        lbl_IndicadorGeneralizado = new javax.swing.JLabel();
         lbl_LogoUNS = new javax.swing.JLabel();
         pnl_Principal = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Producto: Estructura de Datos - Pilas y Colas");
+        setPreferredSize(new java.awt.Dimension(1040, 635));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnl_Lateral.setBackground(new java.awt.Color(51, 51, 51));
+        pnl_Lateral.setPreferredSize(new java.awt.Dimension(0, 0));
+        pnl_Lateral.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lbl_Inicio.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbl_Inicio.setForeground(new java.awt.Color(255, 255, 255));
         lbl_Inicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/inicioE.png"))); // NOI18N
         lbl_Inicio.setText(" Inicio");
+        lbl_Inicio.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 15, 0, 0));
+        pnl_Lateral.add(lbl_Inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 175, 50));
 
         lbl_Presentacion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lbl_Presentacion.setForeground(new java.awt.Color(255, 255, 255));
@@ -108,11 +95,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 lbl_PresentacionMouseExited(evt);
             }
         });
+        pnl_Lateral.add(lbl_Presentacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 286, 170, 50));
+
+        lbl_IndicadorPresentacion.setBackground(new java.awt.Color(51, 51, 51));
+        lbl_IndicadorPresentacion.setText(" ");
+        lbl_IndicadorPresentacion.setOpaque(true);
+        pnl_Lateral.add(lbl_IndicadorPresentacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 286, 6, 50));
 
         lbl_Problema.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbl_Problema.setForeground(new java.awt.Color(255, 255, 255));
         lbl_Problema.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/problemaE.png"))); // NOI18N
         lbl_Problema.setText(" Problema");
+        lbl_Problema.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 15, 0, 0));
+        pnl_Lateral.add(lbl_Problema, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 366, 175, 50));
 
         lbl_Propuesto.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lbl_Propuesto.setForeground(new java.awt.Color(255, 255, 255));
@@ -131,6 +126,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 lbl_PropuestoMouseExited(evt);
             }
         });
+        pnl_Lateral.add(lbl_Propuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 422, 170, 50));
+
+        lbl_IndicadorPropuesto.setBackground(new java.awt.Color(51, 51, 51));
+        lbl_IndicadorPropuesto.setText(" ");
+        lbl_IndicadorPropuesto.setOpaque(true);
+        pnl_Lateral.add(lbl_IndicadorPropuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 422, 6, 50));
 
         lbl_Generalizado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lbl_Generalizado.setForeground(new java.awt.Color(255, 255, 255));
@@ -149,45 +150,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 lbl_GeneralizadoMouseExited(evt);
             }
         });
+        pnl_Lateral.add(lbl_Generalizado, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 472, 170, 50));
+
+        lbl_IndicadorGeneralizado.setBackground(new java.awt.Color(51, 51, 51));
+        lbl_IndicadorGeneralizado.setText(" ");
+        lbl_IndicadorGeneralizado.setOpaque(true);
+        pnl_Lateral.add(lbl_IndicadorGeneralizado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 472, 6, 50));
 
         lbl_LogoUNS.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_LogoUNS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logoUNS.png"))); // NOI18N
+        pnl_Lateral.add(lbl_LogoUNS, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 175, 200));
 
-        javax.swing.GroupLayout pnl_LateralLayout = new javax.swing.GroupLayout(pnl_Lateral);
-        pnl_Lateral.setLayout(pnl_LateralLayout);
-        pnl_LateralLayout.setHorizontalGroup(
-            pnl_LateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_LateralLayout.createSequentialGroup()
-                .addGroup(pnl_LateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lbl_Inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_Problema, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(pnl_LateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(lbl_Generalizado, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lbl_Presentacion, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                        .addComponent(lbl_Propuesto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                        .addComponent(lbl_LogoUNS, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        pnl_LateralLayout.setVerticalGroup(
-            pnl_LateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_LateralLayout.createSequentialGroup()
-                .addComponent(lbl_LogoUNS, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
-                .addComponent(lbl_Inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(lbl_Presentacion, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(lbl_Problema, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(lbl_Propuesto, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(lbl_Generalizado, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        getContentPane().add(pnl_Lateral, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 600));
+        getContentPane().add(pnl_Lateral, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 175, 600));
 
         pnl_Principal.setBackground(new java.awt.Color(245, 245, 245));
+        pnl_Principal.setPreferredSize(new java.awt.Dimension(0, 0));
 
         javax.swing.GroupLayout pnl_PrincipalLayout = new javax.swing.GroupLayout(pnl_Principal);
         pnl_Principal.setLayout(pnl_PrincipalLayout);
@@ -200,51 +177,78 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addGap(0, 600, Short.MAX_VALUE)
         );
 
-        getContentPane().add(pnl_Principal, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 850, 600));
+        getContentPane().add(pnl_Principal, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 0, 850, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+
     private void lbl_PresentacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_PresentacionMouseClicked
         enlazarPanel(presentacion);
+        lbl_IndicadorPresentacion.setBackground(cRojoOscuro);
+        lbl_IndicadorPropuesto.setBackground(cOscuro);
+        lbl_IndicadorGeneralizado.setBackground(cOscuro);
+
     }//GEN-LAST:event_lbl_PresentacionMouseClicked
 
     private void lbl_PropuestoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_PropuestoMouseClicked
         enlazarPanel(propuesto);
+        lbl_IndicadorPresentacion.setBackground(cOscuro);
+        lbl_IndicadorPropuesto.setBackground(cRojoOscuro);
+        lbl_IndicadorGeneralizado.setBackground(cOscuro);
+
     }//GEN-LAST:event_lbl_PropuestoMouseClicked
 
     private void lbl_GeneralizadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_GeneralizadoMouseClicked
         enlazarPanel(generalizado);
+
+        lbl_IndicadorPresentacion.setBackground(cOscuro);
+        lbl_IndicadorPropuesto.setBackground(cOscuro);
+        lbl_IndicadorGeneralizado.setBackground(cRojoOscuro);
     }//GEN-LAST:event_lbl_GeneralizadoMouseClicked
 
     private void lbl_PresentacionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_PresentacionMouseEntered
         lbl_Presentacion.setOpaque(true);
-        lbl_Presentacion.setBackground(new Color(216,47,75));
+        lbl_IndicadorPresentacion.setBackground(cRojoOscuro);
+        lbl_Presentacion.setBackground(cRojoClaro);
     }//GEN-LAST:event_lbl_PresentacionMouseEntered
 
     private void lbl_PresentacionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_PresentacionMouseExited
         lbl_Presentacion.setOpaque(true);
-        lbl_Presentacion.setBackground(new Color(51,51,51));
+        if (!presentacion.isDisplayable()) {
+            lbl_IndicadorPresentacion.setBackground(cOscuro);
+        }
+        lbl_Presentacion.setBackground(cOscuro);
+
     }//GEN-LAST:event_lbl_PresentacionMouseExited
 
     private void lbl_PropuestoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_PropuestoMouseEntered
         lbl_Propuesto.setOpaque(true);
-        lbl_Propuesto.setBackground(new Color(216,47,75));
+        lbl_IndicadorPropuesto.setBackground(cRojoOscuro);
+        lbl_Propuesto.setBackground(cRojoClaro);
     }//GEN-LAST:event_lbl_PropuestoMouseEntered
 
     private void lbl_PropuestoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_PropuestoMouseExited
         lbl_Propuesto.setOpaque(true);
-        lbl_Propuesto.setBackground(new Color(51,51,51));
+        if (!propuesto.isDisplayable()) {
+            lbl_IndicadorPropuesto.setBackground(cOscuro);
+        }    
+        lbl_Propuesto.setBackground(cOscuro);
+
     }//GEN-LAST:event_lbl_PropuestoMouseExited
 
     private void lbl_GeneralizadoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_GeneralizadoMouseEntered
         lbl_Generalizado.setOpaque(true);
-        lbl_Generalizado.setBackground(new Color(216,47,75));
+        lbl_IndicadorGeneralizado.setBackground(cRojoOscuro);
+        lbl_Generalizado.setBackground(cRojoClaro);
     }//GEN-LAST:event_lbl_GeneralizadoMouseEntered
 
     private void lbl_GeneralizadoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_GeneralizadoMouseExited
         lbl_Generalizado.setOpaque(true);
-        lbl_Generalizado.setBackground(new Color(51,51,51));
+        if (!generalizado.isDisplayable()) {
+            lbl_IndicadorGeneralizado.setBackground(cOscuro);
+        }         
+        lbl_Generalizado.setBackground(cOscuro);
     }//GEN-LAST:event_lbl_GeneralizadoMouseExited
 
     /**
@@ -284,6 +288,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel lbl_Generalizado;
+    private javax.swing.JLabel lbl_IndicadorGeneralizado;
+    private javax.swing.JLabel lbl_IndicadorPresentacion;
+    private javax.swing.JLabel lbl_IndicadorPropuesto;
     private javax.swing.JLabel lbl_Inicio;
     private javax.swing.JLabel lbl_LogoUNS;
     private javax.swing.JLabel lbl_Presentacion;
