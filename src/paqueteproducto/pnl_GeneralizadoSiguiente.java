@@ -4,6 +4,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
@@ -45,6 +46,23 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
         btnGrp_ME.add(rdBtn_ME2);
     }
 
+    private boolean identificarExponente(String dato) {
+        boolean estado = true;
+        int inicio;
+        inicio = ((dato.charAt(0) == '-' && dato.length() != 1) ? 1 : 0);
+        for (int i = inicio; i < dato.length(); i++) {
+            if (!(dato.charAt(i) >= '0' && dato.charAt(i) <= '9')) {
+                JOptionPane.showMessageDialog(null, "Solo se aceptan números como exponente.");
+                estado = false;
+                break;
+            } else if (dato.length() == 1 && dato.charAt(0) == '0') {
+                JOptionPane.showMessageDialog(null, "Defina un exponente diferente a cero.");
+                estado = false;
+            }
+        }
+        return estado;
+    }
+
     public boolean confirmarLlenadoDeMenu() {
         boolean llenado = false;
         if ((rdBtn_MO1.isSelected() || rdBtn_MO2.isSelected() || rdBtn_MO3.isSelected()) && (rdBtn_ME1.isSelected() || rdBtn_ME2.isSelected())) {
@@ -84,7 +102,7 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
         return llenado;
     }
 
-    // ---------------------------------------------
+    // --- Getters ----------------------------------------
     public int getTipOp() {
         return tipOp;
     }
@@ -100,7 +118,7 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
     public Cola getcExponente() {
         return cExponente;
     }
-    
+
     //
     public JRadioButton getRdBtn_ME2() {
         return rdBtn_ME2;
@@ -125,7 +143,7 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
     public JLabel getLbl_TerminoOperador() {
         return lbl_TerminoOperador;
     }
-    
+
     public JTextField getTxtFld_Exponente() {
         return txtFld_Exponente;
     }
@@ -134,22 +152,15 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
         return btn_DefinirExponente;
     }
 
-    
-    
-    
-    
-    
-
-    // ---------------------------------------------
-    
+    // --- Setters ----------------------------------------
     public void setTerminoExponente(int terminoExponente) {
         this.terminoExponente = terminoExponente;
     }
-    
+
     public void setTerminoOperador(int terminoOperador) {
         this.terminoOperador = terminoOperador;
     }
-    
+
     public void setTamañoPilaCola(int tamañoPilaCola) {
         this.tamañoPilaCola = tamañoPilaCola;
     }
@@ -161,8 +172,6 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
     public void setcExponente(Cola cExponente) {
         this.cExponente = cExponente;
     }
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -490,29 +499,31 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
 
         // prueba en consola
         for (int i = 0; i <= cOperador.getFin(); i++) {
-            System.out.print(cOperador.getArray()[i]);
+            System.out.print(cOperador.getArray()[i] + " ");
         }
         System.out.println("");
     }//GEN-LAST:event_btn_DefinirOperadorActionPerformed
 
     private void btn_DefinirExponenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DefinirExponenteActionPerformed
-        if (terminoExponente < tamañoPilaCola) {
-            terminoExponente++;
-            lbl_TerminoExponente.setText("Término n°" + terminoExponente);
-        }
-        cExponente.insertar(txtFld_Exponente.getText());
-        if (cExponente.getFin() == tamañoPilaCola - 1) {
-            btn_DefinirExponente.setEnabled(false);
-            txtFld_Exponente.setEnabled(false);
-            terminoExponente++;
+        if (identificarExponente(txtFld_Exponente.getText())) {
+            if (terminoExponente < tamañoPilaCola) {
+                terminoExponente++;
+                lbl_TerminoExponente.setText("Término n°" + terminoExponente);
+            }
+            cExponente.insertar(txtFld_Exponente.getText());
+            if (cExponente.getFin() == tamañoPilaCola - 1) {
+                btn_DefinirExponente.setEnabled(false);
+                txtFld_Exponente.setEnabled(false);
+                terminoExponente++;
 
-            // verifica el estado actual de la cola de Exponentes y Menú
-            confirmarLlenadoDeMenu();
+                // verifica el estado actual de la cola de Exponentes y Menú
+                confirmarLlenadoDeMenu();
+            }
         }
 
         // prueba en consola
         for (int i = 0; i <= cExponente.getFin(); i++) {
-            System.out.print(cExponente.getArray()[i]);
+            System.out.print(cExponente.getArray()[i] + " ");
         }
         System.out.println("");
     }//GEN-LAST:event_btn_DefinirExponenteActionPerformed

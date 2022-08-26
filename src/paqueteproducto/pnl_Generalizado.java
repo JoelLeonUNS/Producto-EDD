@@ -60,7 +60,7 @@ public class pnl_Generalizado extends javax.swing.JPanel {
             btn_Siguiente.setEnabled(true);
             btn_Atras.setEnabled(true);
         } else {
-            JOptionPane.showMessageDialog(null, "Complete todos los datos para poder seguir, por favor.");
+            JOptionPane.showMessageDialog(null, "Complete todos los datos para \npoder seguir, por favor.");
             cont--;
         }
     }
@@ -72,7 +72,7 @@ public class pnl_Generalizado extends javax.swing.JPanel {
 
             btn_Siguiente.setEnabled(false);
         } else {
-            JOptionPane.showMessageDialog(null, "Complete todos los datos para poder seguir, por favor.");
+            JOptionPane.showMessageDialog(null, "Complete todos los datos para \npoder seguir, por favor.");
             cont--;
         }
 

@@ -121,7 +121,56 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
         return llenado;
     }
 
-    // ---------------------------------------------
+    private boolean identificarNumeros(String dato) {
+        boolean estado = true;
+        for (int i = 0; i < dato.length(); i++) {
+            if (!(dato.charAt(i) >= '0' && dato.charAt(i) <= '9' || (dato.charAt(0) == '-' && dato.length() != 1))) {
+                JOptionPane.showMessageDialog(null, "El dato ingresado no es un número.");
+                estado = false;
+                break;
+            } else if (dato.length() == 1 && dato.charAt(0) == '0') {
+                JOptionPane.showMessageDialog(null, "Defina un tamaño mayor a cero.");
+                estado = false;
+            } else if (dato.charAt(0) == '-' && dato.length() != 1) {
+                JOptionPane.showMessageDialog(null, "Defina un tamaño no negativo.");
+                estado = false;
+                break;
+            }
+        }
+        return estado;
+    }
+
+    private boolean identificarCoeficiente(String dato) {
+        boolean estado = true;
+        int inicio;
+        inicio = ((dato.charAt(0) == '-' && dato.length() != 1) ? 1 : 0);
+        for (int i = inicio; i < dato.length(); i++) {
+            if (!(dato.charAt(i) >= '0' && dato.charAt(i) <= '9')) {
+                JOptionPane.showMessageDialog(null, "Solo se aceptan números en la cola.");
+                estado = false;
+                break;
+            }
+        }
+        return estado;
+    }
+
+    private boolean identificarVariable(String dato) {
+        boolean estado = true;
+        for (int i = 0; i < dato.length(); i++) {
+            if (!((dato.charAt(i) >= 'a' && dato.charAt(i) <= 'z') || (dato.charAt(i) >= 'A' && dato.charAt(i) <= 'Z'))) {
+                JOptionPane.showMessageDialog(null, "Solo se aceptan letras en la pila.");
+                estado = false;
+                break;
+            } else if (dato.length() != 1) {
+                JOptionPane.showMessageDialog(null, "Para representar una variable solo \nse hace uso de una letra.");
+                estado = false;
+                break;
+            }
+        }
+        return estado;
+    }
+
+    // --- Getters ----------------------------------------
     public Pila getP() {
         return p;
     }
@@ -434,19 +483,24 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_DefinirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DefinirActionPerformed
-        if (!txtFld_Tamaño.getText().equals("")) { // quitar?
-            btn_Definir.setEnabled(true);
-            tamañoPilaCola = Integer.valueOf(txtFld_Tamaño.getText());
+        if (!txtFld_Tamaño.getText().equals("")) {
+            if (identificarNumeros(txtFld_Tamaño.getText())) {
+                btn_Definir.setEnabled(true);
+                tamañoPilaCola = Integer.valueOf(txtFld_Tamaño.getText());
 
-            crearPilaCola();
-            llenarTablaModelo("Pila");
-            llenarTablaModelo("Cola");
-            txtFld_InsertarPila.setEnabled(true);
-            txtFld_InsertarCola.setEnabled(true);
-            btn_Definir.setEnabled(false);
+                crearPilaCola();
+                llenarTablaModelo("Pila");
+                llenarTablaModelo("Cola");
+                txtFld_InsertarPila.setEnabled(true);
+                txtFld_InsertarCola.setEnabled(true);
+                btn_Definir.setEnabled(false);
+            } else {
+                txtFld_Tamaño.setText("");
+            }
         } else {
-            JOptionPane.showMessageDialog(null, "No se puede definir el tamaño, porque no hay ningún dato en el campo de texto.");
+            JOptionPane.showMessageDialog(null, "Por favor ingrese un dato.");
         }
+
         // borrar luego
         System.out.println("Tamaño de la pila y cola: " + tamañoPilaCola);
     }//GEN-LAST:event_btn_DefinirActionPerformed
@@ -464,13 +518,15 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
     }//GEN-LAST:event_txtFld_TamañoFocusLost
 
     private void btn_InsertarPilaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_InsertarPilaActionPerformed
-        p.push(txtFld_InsertarPila.getText());
-        if (tablaModeloPila.getValueAt(0, p.getTope() + 1) == null) {
-            tablaModeloPila.setValueAt(txtFld_InsertarPila.getText(), 0, p.getTope() + 1);
-            // se suma 1 al tope de la pila, porque en la posición 0 (de la tabla) está la palabra "Pila"
-            editarIndicadorPila();
-            // verifica el estado actual de la cola y pila
-            confirmarLlenadoDeColaPila();
+        if (identificarVariable(txtFld_InsertarPila.getText())) {
+            p.push(txtFld_InsertarPila.getText());
+            if (tablaModeloPila.getValueAt(0, p.getTope() + 1) == null) {
+                tablaModeloPila.setValueAt(txtFld_InsertarPila.getText(), 0, p.getTope() + 1);
+                // se suma 1 al tope de la pila, porque en la posición 0 (de la tabla) está la palabra "Pila"
+                editarIndicadorPila();
+                // verifica el estado actual de la cola y pila
+                confirmarLlenadoDeColaPila();
+            }
         }
     }//GEN-LAST:event_btn_InsertarPilaActionPerformed
 
@@ -487,13 +543,15 @@ public class pnl_GeneralizadoInicial extends javax.swing.JPanel {
     }//GEN-LAST:event_txtFld_InsertarPilaFocusLost
 
     private void btn_InsertarColaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_InsertarColaActionPerformed
-        c.insertar(txtFld_InsertarCola.getText());
-        if (tablaModeloCola.getValueAt(0, c.getFin() + 1) == null) {
-            tablaModeloCola.setValueAt(txtFld_InsertarCola.getText(), 0, c.getFin() + 1);
-            // se suma 1 al fin de la cola, porque en la posición 0 (de la tabla) está la palabra "Cola"
-            editarIndicadorCola();
-            // verifica el estado actual de la cola y pila
-            confirmarLlenadoDeColaPila();
+        if (identificarCoeficiente(txtFld_InsertarCola.getText())) {
+            c.insertar(txtFld_InsertarCola.getText());
+            if (tablaModeloCola.getValueAt(0, c.getFin() + 1) == null) {
+                tablaModeloCola.setValueAt(txtFld_InsertarCola.getText(), 0, c.getFin() + 1);
+                // se suma 1 al fin de la cola, porque en la posición 0 (de la tabla) está la palabra "Cola"
+                editarIndicadorCola();
+                // verifica el estado actual de la cola y pila
+                confirmarLlenadoDeColaPila();
+            }
         }
     }//GEN-LAST:event_btn_InsertarColaActionPerformed
 
