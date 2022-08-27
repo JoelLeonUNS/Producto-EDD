@@ -1,11 +1,8 @@
 package paqueteproducto;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.Scanner;
 import javax.swing.JTable;
 import javax.swing.SwingConstants;
-import javax.swing.Timer;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
@@ -27,7 +24,6 @@ public class pnl_Propuesto extends javax.swing.JPanel {
 
     private final DefaultTableModel tablaModeloPila = new DefaultTableModel();
     private final DefaultTableModel tablaModeloCola = new DefaultTableModel();
-    private Timer time;
 
     /**
      * Creates new form pnl_Propuesto
@@ -111,25 +107,14 @@ public class pnl_Propuesto extends javax.swing.JPanel {
         cellRender.setHorizontalAlignment(SwingConstants.CENTER);
         // centrar cabecera
         ((DefaultTableCellRenderer) tbl.getTableHeader().getDefaultRenderer()).setHorizontalAlignment(SwingConstants.CENTER);
-        
+
         // centrar los datos
         for (int i = 0; i <= tamañoPilaCola; i++) {
             tbl.getColumnModel().getColumn(i).setCellRenderer(cellRender);
         }
     }
 
-    private void animacionTransformacion() {
-
-        time = new Timer(1000, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                editarIndicadorPilaCola();
-                editarTablaPilaCola();
-            }
-        });
-    }
-
-    //
+    //     
     private String transformacion(int tipOp, int tipExp) {
         String notInf = "";
         String x, exp, operador; // para almacenar el valor que retorna la cola al hacer la supresión
@@ -177,7 +162,7 @@ public class pnl_Propuesto extends javax.swing.JPanel {
         }
         return operador;
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -373,7 +358,7 @@ public class pnl_Propuesto extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_TransformarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_TransformarActionPerformed
-        // valores preestablecidos
+        // valores preestablecidos       
         txtFld_NotacionInfija.setText(transformacion(1, 1)); // las opciones por defecto
         editarIndicadorPilaCola();
         editarTablaPilaCola();
