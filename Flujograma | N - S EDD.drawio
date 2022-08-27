@@ -1,1 +1,256 @@
-<mxfile host="app.diagrams.net" modified="2022-08-27T21:00:01.186Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36" etag="BKdtdBKosnoLyxroDsGz" version="20.2.7" type="github"><diagram id="KbOZQ2jLJf1HyeKF2sDm" name="Página-1">dZHBDoMgDIafhrtC4tzZue3iycPORDohQWuQRbenHwaZI24nytf/p7QlrOjmi+GDrFCAJjQRM2EnQmmasNwdC3l6ktHUg9YosYo2UKsXBOdKH0rAGAktorZqiGGDfQ+NjRg3BqdYdkcdVx14CztQN1zv6U0JKz3N6WHjV1CtDJXT7OgzHQ/itZNRcoHTF2IlYYVBtD7q5gL0MrwwF+87/8l+Pmagtz8MLtjedpdoQ6x8Aw==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-08-27T21:02:07.988Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36" etag="ckh-0fzzarmvVwuEEB1G" version="20.2.7" type="github">
+  <diagram id="KbOZQ2jLJf1HyeKF2sDm" name="Principal">
+    <mxGraphModel dx="2595" dy="1553" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="174-ShGQQSswbt4wfDgG-1" value="Mientras que op != 3" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;strokeWidth=2;verticalAlign=bottom;spacingBottom=5;" vertex="1" parent="1">
+          <mxGeometry x="880" y="405" width="700" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;fontFamily=Lucida Console;" edge="1" parent="1" source="174-ShGQQSswbt4wfDgG-3" target="174-ShGQQSswbt4wfDgG-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-3" value="Inicio_Principal()" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;fontFamily=Lucida Console;" vertex="1" parent="1">
+          <mxGeometry x="331.49" y="50" width="144.99" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-4" value="Fin_Principal" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;fontFamily=Lucida Console;" vertex="1" parent="1">
+          <mxGeometry x="336.51" y="1070" width="134.98" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=12;fontFamily=Lucida Console;" edge="1" parent="1" source="174-ShGQQSswbt4wfDgG-6" target="174-ShGQQSswbt4wfDgG-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-6" value="Menú Principal" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.display;whiteSpace=wrap;spacingLeft=20;spacingRight=10;verticalAlign=middle;fontSize=12;fontFamily=Lucida Console;" vertex="1" parent="1">
+          <mxGeometry x="354" y="190" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=12;fontFamily=Lucida Console;" edge="1" parent="1" source="174-ShGQQSswbt4wfDgG-8" target="174-ShGQQSswbt4wfDgG-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-8" value="1. Ejecutar el programa con los valores preestablecidos del caso propuesto." style="strokeWidth=2;html=1;shape=mxgraph.flowchart.display;whiteSpace=wrap;spacingLeft=20;spacingRight=10;fontFamily=Lucida Console;" vertex="1" parent="1">
+          <mxGeometry x="278.98" y="260" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="174-ShGQQSswbt4wfDgG-10" target="174-ShGQQSswbt4wfDgG-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-10" value="2. Ejecutar el programa introduciendo valores por teclado." style="strokeWidth=2;html=1;shape=mxgraph.flowchart.display;whiteSpace=wrap;spacingLeft=20;spacingRight=10;fontFamily=Lucida Console;" vertex="1" parent="1">
+          <mxGeometry x="279" y="360" width="245" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=12;fontFamily=Lucida Console;" edge="1" parent="1" source="174-ShGQQSswbt4wfDgG-12" target="174-ShGQQSswbt4wfDgG-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-12" value="3. Salir." style="strokeWidth=2;html=1;shape=mxgraph.flowchart.display;whiteSpace=wrap;spacingLeft=20;spacingRight=10;fontFamily=Lucida Console;" vertex="1" parent="1">
+          <mxGeometry x="353.99" y="460" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;fontFamily=Lucida Console;" edge="1" parent="1" source="174-ShGQQSswbt4wfDgG-14" target="174-ShGQQSswbt4wfDgG-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-14" value="Opción:&amp;nbsp;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.display;whiteSpace=wrap;spacingLeft=20;spacingRight=10;fontFamily=Lucida Console;" vertex="1" parent="1">
+          <mxGeometry x="354" y="530" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-15" value="Leer op" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;fontSize=12;fontFamily=Lucida Console;" vertex="1" parent="1">
+          <mxGeometry x="353.98" y="604" width="100" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=12;fontFamily=Lucida Console;" edge="1" parent="1" source="174-ShGQQSswbt4wfDgG-17" target="174-ShGQQSswbt4wfDgG-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-17" value="Definir op como &lt;i&gt;entero&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fontSize=12;fontFamily=Lucida Console;" vertex="1" parent="1">
+          <mxGeometry x="313.98" y="118" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;fontFamily=Lucida Console;" edge="1" parent="1" source="174-ShGQQSswbt4wfDgG-22">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="404" y="170" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="789" y="940" />
+              <mxPoint x="789" y="170" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-19" value="&amp;nbsp;V&amp;nbsp;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Lucida Console;" vertex="1" connectable="0" parent="174-ShGQQSswbt4wfDgG-18">
+          <mxGeometry x="-0.9542" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;fontFamily=Lucida Console;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="269" y="940" />
+              <mxPoint x="269" y="1020" />
+              <mxPoint x="404" y="1020" />
+            </Array>
+            <mxPoint x="353.97999999999956" y="940" as="sourcePoint" />
+            <mxPoint x="404" y="1070" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-21" value="&amp;nbsp;F&amp;nbsp;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Lucida Console;" vertex="1" connectable="0" parent="174-ShGQQSswbt4wfDgG-20">
+          <mxGeometry x="-0.8239" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-22" value="op != 3" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;fontSize=12;fontFamily=Lucida Console;" vertex="1" parent="1">
+          <mxGeometry x="353.98" y="910" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Lucida Console;" edge="1" parent="1" source="174-ShGQQSswbt4wfDgG-24" target="174-ShGQQSswbt4wfDgG-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-24" value="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;strokeWidth=2;fontFamily=Lucida Console;" vertex="1" parent="1">
+          <mxGeometry x="39" y="720" width="260" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Lucida Console;" edge="1" parent="1" source="174-ShGQQSswbt4wfDgG-26" target="174-ShGQQSswbt4wfDgG-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-26" value="2" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;strokeWidth=2;fontFamily=Lucida Console;" vertex="1" parent="1">
+          <mxGeometry x="294" y="720" width="220" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="174-ShGQQSswbt4wfDgG-28" target="174-ShGQQSswbt4wfDgG-22">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="554" y="890" />
+              <mxPoint x="404" y="890" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-28" value="3" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;strokeWidth=2;fontFamily=Lucida Console;" vertex="1" parent="1">
+          <mxGeometry x="509" y="720" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;fontFamily=Lucida Console;" edge="1" parent="1" source="174-ShGQQSswbt4wfDgG-30" target="174-ShGQQSswbt4wfDgG-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-30" value="De otro modo" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;strokeWidth=2;fontFamily=Lucida Console;" vertex="1" parent="1">
+          <mxGeometry x="599" y="720" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;fontFamily=Lucida Console;" edge="1" parent="1" source="174-ShGQQSswbt4wfDgG-32" target="174-ShGQQSswbt4wfDgG-22">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="164" y="890" />
+              <mxPoint x="404" y="890" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-32" value="menuValoresPreestablecidos()" style="verticalLabelPosition=middle;verticalAlign=middle;html=1;shape=process;whiteSpace=wrap;rounded=1;size=0.038461538461538464;arcSize=6;labelPosition=center;align=center;strokeWidth=2;fontFamily=Lucida Console;" vertex="1" parent="1">
+          <mxGeometry x="46.5" y="760" width="235" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;fontFamily=Lucida Console;" edge="1" parent="1" source="174-ShGQQSswbt4wfDgG-34" target="174-ShGQQSswbt4wfDgG-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-34" value="menuValoresPorTeclado()" style="verticalLabelPosition=middle;verticalAlign=middle;html=1;shape=process;whiteSpace=wrap;rounded=1;size=0.038461538461538464;arcSize=6;labelPosition=center;align=center;strokeWidth=2;fontFamily=Lucida Console;" vertex="1" parent="1">
+          <mxGeometry x="302.75" y="810" width="202.5" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontFamily=Lucida Console;" edge="1" parent="1" source="174-ShGQQSswbt4wfDgG-28" target="174-ShGQQSswbt4wfDgG-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Lucida Console;" edge="1" parent="1" source="174-ShGQQSswbt4wfDgG-37" target="174-ShGQQSswbt4wfDgG-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-37" value="itr &amp;lt;-- 0" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fontFamily=Lucida Console;" vertex="1" parent="1">
+          <mxGeometry x="354" y="760" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;fontFamily=Lucida Console;" edge="1" parent="1" source="174-ShGQQSswbt4wfDgG-39" target="174-ShGQQSswbt4wfDgG-22">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="674" y="890" />
+              <mxPoint x="404" y="890" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-39" value="Error, opción no encontrada." style="strokeWidth=2;html=1;shape=mxgraph.flowchart.display;whiteSpace=wrap;spacingLeft=20;spacingRight=10;fontFamily=Lucida Console;" vertex="1" parent="1">
+          <mxGeometry x="604" y="760" width="140" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-40" value="Inicio_Principal()" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;strokeWidth=2;spacingLeft=5;spacingRight=5;" vertex="1" parent="1">
+          <mxGeometry x="880" y="345" width="700" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-41" value="Definir op como&amp;nbsp;&lt;i&gt;entero&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;strokeWidth=2;spacingLeft=5;spacingRight=5;" vertex="1" parent="1">
+          <mxGeometry x="880" y="375" width="700" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-42" value="Escribir &quot;Menú principal&quot;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;strokeWidth=2;spacingLeft=5;spacingRight=5;" vertex="1" parent="1">
+          <mxGeometry x="920" y="405" width="660" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-43" value="Escribir &quot;1. Ejecutar el programa con los valores preestablecidos del caso propuesto.&quot;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;strokeWidth=2;spacingLeft=5;spacingRight=5;" vertex="1" parent="1">
+          <mxGeometry x="920" y="435" width="660" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-44" value="Escribir &quot;2. Ejecutar el programa introduciendo valores por teclado.&quot;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;strokeWidth=2;spacingLeft=5;spacingRight=5;" vertex="1" parent="1">
+          <mxGeometry x="920" y="475" width="660" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-45" value="Escribir &quot;3. Salir.&quot;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;strokeWidth=2;spacingLeft=5;spacingRight=5;" vertex="1" parent="1">
+          <mxGeometry x="920" y="515" width="660" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-46" value="Escribir &quot;Opción: &quot;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;strokeWidth=2;spacingLeft=5;spacingRight=5;" vertex="1" parent="1">
+          <mxGeometry x="920" y="545" width="660" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-47" value="Leer op" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;strokeWidth=2;spacingLeft=5;spacingRight=5;" vertex="1" parent="1">
+          <mxGeometry x="920" y="575" width="660" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-48" value="op" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;strokeWidth=2;spacingLeft=280;spacingRight=5;spacingTop=0;spacingBottom=30;" vertex="1" parent="1">
+          <mxGeometry x="920" y="605" width="660" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-49" value="menuValoresPreestablecidos()" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;strokeWidth=2;spacingLeft=5;spacingRight=5;" vertex="1" parent="1">
+          <mxGeometry x="920" y="705" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-50" value="itr &amp;lt;-- 0" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;strokeWidth=2;spacingLeft=5;spacingRight=5;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="705" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-51" value="Escribir &quot;Error, opción no encontrada.&quot;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;strokeWidth=2;spacingLeft=5;spacingRight=5;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="705" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-52" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Lucida Console;" vertex="1" parent="1">
+          <mxGeometry x="920" y="675" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-53" value="2" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Lucida Console;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="675" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-54" value="3" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Lucida Console;" vertex="1" parent="1">
+          <mxGeometry x="1330" y="675" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-55" value="De otro modo" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Lucida Console;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="675" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-56" value="" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;strokeWidth=2;spacingLeft=5;spacingRight=5;" vertex="1" parent="1">
+          <mxGeometry x="1330" y="705" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-57" value="menuValoresPorTeclado()" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;strokeWidth=2;spacingLeft=5;spacingRight=5;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="735" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-58" value="" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="920" y="735" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-59" value="" style="endArrow=none;html=1;rounded=0;fontFamily=Lucida Console;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;" edge="1" parent="1" source="174-ShGQQSswbt4wfDgG-48" target="174-ShGQQSswbt4wfDgG-55">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1190" y="625" as="sourcePoint" />
+            <mxPoint x="1240" y="575" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-60" value="" style="endArrow=none;html=1;rounded=0;fontFamily=Lucida Console;strokeWidth=2;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="174-ShGQQSswbt4wfDgG-55" target="174-ShGQQSswbt4wfDgG-48">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1370" y="865" as="sourcePoint" />
+            <mxPoint x="1240" y="575" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-61" value="" style="endArrow=none;html=1;rounded=0;fontFamily=Lucida Console;strokeWidth=2;entryX=0;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="174-ShGQQSswbt4wfDgG-55" target="174-ShGQQSswbt4wfDgG-55">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1190" y="625" as="sourcePoint" />
+            <mxPoint x="1240" y="575" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-62" value="" style="endArrow=none;html=1;rounded=0;fontFamily=Lucida Console;strokeWidth=2;exitX=1;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1140" y="707" as="sourcePoint" />
+            <mxPoint x="1140" y="637" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-63" value="" style="endArrow=none;html=1;rounded=0;fontFamily=Lucida Console;strokeWidth=2;entryX=1;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="174-ShGQQSswbt4wfDgG-50">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1330" y="665" as="sourcePoint" />
+            <mxPoint x="1250" y="665" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-64" value="" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;strokeWidth=2;spacingLeft=5;spacingRight=5;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="735" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-65" value="Fin_Principal" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;strokeWidth=2;spacingLeft=5;spacingRight=5;" vertex="1" parent="1">
+          <mxGeometry x="880" y="795" width="700" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="174-ShGQQSswbt4wfDgG-66" value="op" style="verticalLabelPosition=middle;verticalAlign=middle;html=1;shape=mxgraph.basic.acute_triangle;dx=0.5;strokeWidth=2;labelPosition=center;align=center;" vertex="1" parent="1">
+          <mxGeometry x="39" y="650" width="710" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
