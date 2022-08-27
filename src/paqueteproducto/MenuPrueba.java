@@ -68,8 +68,8 @@ public class MenuPrueba {
         Cola c1 = new Cola(cola, FINAL, FRENTE);
         Pila p1 = new Pila(pila, TOPE, FONDO);
         
-        colaOperador = new Cola(new String[longitud], FINAL, FRENTE);
-        colaExponente = new Cola(new String[longitud], FINAL, FRENTE);
+        colaOperador = new Cola(new String[longitud], FINAL, FRENTE); // cambio
+        colaExponente = new Cola(new String[longitud], FINAL, FRENTE); // cambio
 
         // llenado de pila y cola
         llenarColaPila(c1, p1, longitud);

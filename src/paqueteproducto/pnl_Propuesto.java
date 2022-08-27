@@ -27,7 +27,6 @@ public class pnl_Propuesto extends javax.swing.JPanel {
 
     private final DefaultTableModel tablaModeloPila = new DefaultTableModel();
     private final DefaultTableModel tablaModeloCola = new DefaultTableModel();
-    private Timer time;
 
     /**
      * Creates new form pnl_Propuesto
@@ -116,17 +115,6 @@ public class pnl_Propuesto extends javax.swing.JPanel {
         for (int i = 0; i <= tamañoPilaCola; i++) {
             tbl.getColumnModel().getColumn(i).setCellRenderer(cellRender);
         }
-    }
-
-    private void animacionTransformacion() {
-
-        time = new Timer(1000, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                editarIndicadorPilaCola();
-                editarTablaPilaCola();
-            }
-        });
     }
 
     //

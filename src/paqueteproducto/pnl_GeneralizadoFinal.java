@@ -354,6 +354,7 @@ public class pnl_GeneralizadoFinal extends javax.swing.JPanel {
 
         if (p.getTope() == -1 && c.getFin() == -1) {
             btn_Transformar.setEnabled(false);
+            itr = 0; // se reinicia a 0, para un próximo uso
         } else {
             btn_Transformar.setEnabled(true);
         }
