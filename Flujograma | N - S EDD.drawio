@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-08-28T04:35:49.168Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36" etag="WT8ngsnkz7XXi7Ud7FCw" version="20.2.7" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2022-08-28T04:52:18.582Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36" etag="5JUr0UBIp15d0JZnvcP_" version="20.2.7" type="github" pages="3">
   <diagram id="KbOZQ2jLJf1HyeKF2sDm" name="Principal">
     <mxGraphModel dx="1483" dy="947" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -605,7 +605,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="BgARdQTe4i1sBFe4p9YL" name="transformación">
-    <mxGraphModel dx="2519" dy="1722" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2875" dy="1949" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -621,7 +621,7 @@
         <mxCell id="J9ThBxTcKpbcXao7bBJX-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=813;entryDy=0;entryPerimeter=0;fontFamily=Lucida Console;fontSize=12;fontColor=#000000;endArrow=classic;endFill=1;" parent="1" source="J9ThBxTcKpbcXao7bBJX-2" target="J9ThBxTcKpbcXao7bBJX-38" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <UserObject label="Cadena notInf = &quot;&quot;, x, exp, operador" lucidchartObjectId="b1zEZnB9f9Hc" id="J9ThBxTcKpbcXao7bBJX-2">
+        <UserObject label="Cadena notInf &amp;lt;-- &quot;&quot;, x, exp, operador" lucidchartObjectId="b1zEZnB9f9Hc" id="J9ThBxTcKpbcXao7bBJX-2">
           <mxCell style="html=1;overflow=block;blockSpacing=1;whiteSpace=wrap;fontSize=14.7;fontColor=#000000;align=center;spacing=9;strokeColor=#5e5e5e;strokeOpacity=100;rounded=1;absoluteArcSize=1;arcSize=9;strokeWidth=2.3;fontFamily=Lucida Console;" parent="1" vertex="1">
             <mxGeometry x="-819.25" y="-1037.36" width="414.5" height="30" as="geometry" />
           </mxCell>
@@ -1215,7 +1215,7 @@
         <mxCell id="ap0nbyULW7FJF_YDTL7k-63" value="No" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontFamily=Lucida Console;fontSize=8;" vertex="1" parent="1">
           <mxGeometry x="508" y="818" width="22" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="ap0nbyULW7FJF_YDTL7k-64" value="&lt;span style=&quot;color: rgb(68, 68, 68); font-family: Calibri, sans-serif, &amp;quot;Mongolian Baiti&amp;quot;, &amp;quot;Microsoft Yi Baiti&amp;quot;, &amp;quot;Javanese Text&amp;quot;, &amp;quot;Yu Gothic&amp;quot;; text-align: left; background-color: rgb(255, 255, 255);&quot;&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;notInf &amp;lt;-- notInf +  &quot;^&quot;&amp;nbsp;&lt;/font&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=10;" vertex="1" parent="1">
+        <mxCell id="ap0nbyULW7FJF_YDTL7k-64" value="&lt;span style=&quot;color: rgb(68, 68, 68); font-family: Calibri, sans-serif, &amp;quot;Mongolian Baiti&amp;quot;, &amp;quot;Microsoft Yi Baiti&amp;quot;, &amp;quot;Javanese Text&amp;quot;, &amp;quot;Yu Gothic&amp;quot;; text-align: left; background-color: rgb(255, 255, 255);&quot;&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;notInf &amp;lt;-- notInf +  &quot;^&quot;&amp;nbsp; + exp&lt;/font&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="318" y="840" width="160" height="20" as="geometry" />
         </mxCell>
         <mxCell id="ap0nbyULW7FJF_YDTL7k-65" value="" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=10;" vertex="1" parent="1">
@@ -1233,7 +1233,7 @@
         <mxCell id="ap0nbyULW7FJF_YDTL7k-76" value="&lt;span style=&quot;color: rgb(68, 68, 68); font-size: 10px; text-align: left; background-color: rgb(255, 255, 255);&quot;&gt;Inicio_Transformacion(&lt;/span&gt;&lt;span style=&quot;color: rgb(68, 68, 68); font-size: 10px; text-align: left; background-color: rgb(255, 255, 255);&quot;&gt;Cola c,Pila p, &lt;/span&gt;&lt;span style=&quot;color: rgb(68, 68, 68); font-size: 10px; text-align: left; background-color: rgb(255, 255, 255);&quot;&gt;entero&lt;/span&gt;&lt;span style=&quot;color: rgb(68, 68, 68); font-size: 10px; text-align: left; background-color: rgb(255, 255, 255);&quot;&gt; longitud, &lt;/span&gt;&lt;span style=&quot;color: rgb(68, 68, 68); font-size: 10px; text-align: left; background-color: rgb(255, 255, 255);&quot;&gt;entero&lt;/span&gt;&lt;span style=&quot;color: rgb(68, 68, 68); font-size: 10px; text-align: left; background-color: rgb(255, 255, 255);&quot;&gt; tipOp , &lt;/span&gt;&lt;span style=&quot;color: rgb(68, 68, 68); font-size: 10px; text-align: left; background-color: rgb(255, 255, 255);&quot;&gt;entero&lt;/span&gt;&lt;span style=&quot;color: rgb(68, 68, 68); font-size: 10px; text-align: left; background-color: rgb(255, 255, 255);&quot;&gt; tipExp&lt;/span&gt;&lt;span style=&quot;color: rgb(68, 68, 68); font-size: 10px; text-align: left; background-color: rgb(255, 255, 255);&quot;&gt;) : &lt;/span&gt;&lt;span style=&quot;color: rgb(68, 68, 68); font-size: 10px; text-align: left; background-color: rgb(255, 255, 255);&quot;&gt;cadena&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="68" y="440" width="692" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="ap0nbyULW7FJF_YDTL7k-77" value="&lt;span style=&quot;color: rgb(68, 68, 68); font-size: 10px; text-align: left; background-color: rgb(255, 255, 255);&quot;&gt;cadena notInf ,x,expo&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=10;" vertex="1" parent="1">
+        <mxCell id="ap0nbyULW7FJF_YDTL7k-77" value="&lt;span style=&quot;color: rgb(68, 68, 68); font-size: 10px; text-align: left; background-color: rgb(255, 255, 255);&quot;&gt;Cadena notInf &amp;lt;-- &quot;&quot;, x, expo, operador&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="68" y="470" width="692" height="30" as="geometry" />
         </mxCell>
         <mxCell id="ap0nbyULW7FJF_YDTL7k-78" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.acute_triangle;dx=0.26;fontFamily=Lucida Console;direction=west;strokeColor=default;" vertex="1" parent="1">
@@ -1330,7 +1330,7 @@
           <mxGeometry x="638" y="527" width="90" height="26" as="geometry" />
         </mxCell>
         <mxCell id="ap0nbyULW7FJF_YDTL7k-115" value="&lt;font style=&quot;font-size: 7px;&quot;&gt;&lt;span style=&quot;color: rgb(68, 68, 68); text-align: left; background-color: rgb(255, 255, 255);&quot;&gt;Escribir &lt;/span&gt;&lt;span style=&quot;color: rgb(68, 68, 68); text-align: left; background-color: rgb(255, 255, 255);&quot;&gt;&quot;Error, opción no encontrada.&quot;&lt;/span&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="580" y="550" width="178" height="20" as="geometry" />
+          <mxGeometry x="580" y="550" width="180" height="20" as="geometry" />
         </mxCell>
         <mxCell id="ap0nbyULW7FJF_YDTL7k-117" value="&lt;span style=&quot;color: rgb(68, 68, 68); font-size: 10px; text-align: left; background-color: rgb(255, 255, 255);&quot;&gt;Fin_Transformacion&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="68" y="890" width="692" height="30" as="geometry" />
