@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package paqueteproducto;
 
 /**
@@ -26,100 +22,100 @@ public class pnl_Presentacion extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        txtArea_Enunciado = new javax.swing.JTextArea();
-        jLabel11 = new javax.swing.JLabel();
-        txtArea_Enunciado1 = new javax.swing.JTextArea();
-        jLabel12 = new javax.swing.JLabel();
+        lbl_UNS = new javax.swing.JLabel();
+        lbl_imgCola = new javax.swing.JLabel();
+        lbl_imgPila = new javax.swing.JLabel();
+        lbl_Facultad = new javax.swing.JLabel();
+        lbl_Ciclo = new javax.swing.JLabel();
+        lbl_Escuela = new javax.swing.JLabel();
+        lbl_Integrantes = new javax.swing.JLabel();
+        lbl_IngSistemas = new javax.swing.JLabel();
+        lbl_TituloP1 = new javax.swing.JLabel();
+        txtAr_Integrantes = new javax.swing.JTextArea();
+        lbl_Docente = new javax.swing.JLabel();
+        txtAr_Docente = new javax.swing.JTextArea();
+        lbl_TituloP2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(245, 245, 245));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(70, 70, 70));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("UNIVERSIDAD NACIONAL DEL SANTA");
+        lbl_UNS.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_UNS.setForeground(new java.awt.Color(70, 70, 70));
+        lbl_UNS.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_UNS.setText("UNIVERSIDAD NACIONAL DEL SANTA");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/imgColaE.png"))); // NOI18N
+        lbl_imgCola.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/imgColaE.png"))); // NOI18N
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/imgPilaE.png"))); // NOI18N
+        lbl_imgPila.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/imgPilaE.png"))); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(70, 70, 70));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("FACULTAD DE INGENIERÍA");
+        lbl_Facultad.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_Facultad.setForeground(new java.awt.Color(70, 70, 70));
+        lbl_Facultad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_Facultad.setText("FACULTAD DE INGENIERÍA");
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(70, 70, 70));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("IV CICLO – SEMESTRE 2022-I");
+        lbl_Ciclo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_Ciclo.setForeground(new java.awt.Color(70, 70, 70));
+        lbl_Ciclo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_Ciclo.setText("IV CICLO – SEMESTRE 2022-I");
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(70, 70, 70));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("ESCUELA ACADÉMICO PROFESIONAL DE");
+        lbl_Escuela.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_Escuela.setForeground(new java.awt.Color(70, 70, 70));
+        lbl_Escuela.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_Escuela.setText("ESCUELA ACADÉMICO PROFESIONAL DE");
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(70, 70, 70));
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("INTEGRANTES");
+        lbl_Integrantes.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_Integrantes.setForeground(new java.awt.Color(70, 70, 70));
+        lbl_Integrantes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_Integrantes.setText("INTEGRANTES");
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(70, 70, 70));
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("INGENIERÍA DE SISTEMAS E INFORMÁTICA");
+        lbl_IngSistemas.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_IngSistemas.setForeground(new java.awt.Color(70, 70, 70));
+        lbl_IngSistemas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_IngSistemas.setText("INGENIERÍA DE SISTEMAS E INFORMÁTICA");
 
-        jLabel10.setFont(new java.awt.Font("Playball", 1, 24)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(70, 70, 70));
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("“Polinomio en Notación Infija");
+        lbl_TituloP1.setFont(new java.awt.Font("Playball", 1, 24)); // NOI18N
+        lbl_TituloP1.setForeground(new java.awt.Color(70, 70, 70));
+        lbl_TituloP1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_TituloP1.setText("“Polinomio en Notación Infija");
 
-        txtArea_Enunciado.setEditable(false);
-        txtArea_Enunciado.setBackground(new java.awt.Color(255, 255, 255));
-        txtArea_Enunciado.setColumns(20);
-        txtArea_Enunciado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtArea_Enunciado.setForeground(new java.awt.Color(80, 80, 80));
-        txtArea_Enunciado.setLineWrap(true);
-        txtArea_Enunciado.setRows(5);
-        txtArea_Enunciado.setText("Castillo Goicochea Angie Carolina\nGonzales Corzo Abner Jorge\nLeon Mondoñedo Joel\nTirado Mendoza Gilmer Alexander");
-        txtArea_Enunciado.setWrapStyleWord(true);
-        txtArea_Enunciado.setAutoscrolls(false);
-        txtArea_Enunciado.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        txtArea_Enunciado.setFocusable(false);
-        txtArea_Enunciado.setMargin(new java.awt.Insets(10, 10, 10, 10));
-        txtArea_Enunciado.setMinimumSize(new java.awt.Dimension(750, 110));
+        txtAr_Integrantes.setEditable(false);
+        txtAr_Integrantes.setBackground(new java.awt.Color(255, 255, 255));
+        txtAr_Integrantes.setColumns(20);
+        txtAr_Integrantes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtAr_Integrantes.setForeground(new java.awt.Color(80, 80, 80));
+        txtAr_Integrantes.setLineWrap(true);
+        txtAr_Integrantes.setRows(5);
+        txtAr_Integrantes.setText("Castillo Goicochea Angie Carolina\nGonzales Corzo Abner Jorge\nLeon Mondoñedo Joel\nTirado Mendoza Gilmer Alexander");
+        txtAr_Integrantes.setWrapStyleWord(true);
+        txtAr_Integrantes.setAutoscrolls(false);
+        txtAr_Integrantes.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        txtAr_Integrantes.setFocusable(false);
+        txtAr_Integrantes.setMargin(new java.awt.Insets(10, 10, 10, 10));
+        txtAr_Integrantes.setMinimumSize(new java.awt.Dimension(750, 110));
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(70, 70, 70));
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("DOCENTE");
+        lbl_Docente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_Docente.setForeground(new java.awt.Color(70, 70, 70));
+        lbl_Docente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_Docente.setText("DOCENTE");
 
-        txtArea_Enunciado1.setEditable(false);
-        txtArea_Enunciado1.setBackground(new java.awt.Color(255, 255, 255));
-        txtArea_Enunciado1.setColumns(20);
-        txtArea_Enunciado1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtArea_Enunciado1.setForeground(new java.awt.Color(80, 80, 80));
-        txtArea_Enunciado1.setLineWrap(true);
-        txtArea_Enunciado1.setRows(5);
-        txtArea_Enunciado1.setText("Dr. Hugo Esteban Caselli Gismondi");
-        txtArea_Enunciado1.setWrapStyleWord(true);
-        txtArea_Enunciado1.setAutoscrolls(false);
-        txtArea_Enunciado1.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        txtArea_Enunciado1.setFocusable(false);
-        txtArea_Enunciado1.setMargin(new java.awt.Insets(10, 10, 10, 10));
-        txtArea_Enunciado1.setMinimumSize(new java.awt.Dimension(750, 110));
+        txtAr_Docente.setEditable(false);
+        txtAr_Docente.setBackground(new java.awt.Color(255, 255, 255));
+        txtAr_Docente.setColumns(20);
+        txtAr_Docente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtAr_Docente.setForeground(new java.awt.Color(80, 80, 80));
+        txtAr_Docente.setLineWrap(true);
+        txtAr_Docente.setRows(5);
+        txtAr_Docente.setText("Dr. Hugo Esteban Caselli Gismondi");
+        txtAr_Docente.setWrapStyleWord(true);
+        txtAr_Docente.setAutoscrolls(false);
+        txtAr_Docente.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        txtAr_Docente.setFocusable(false);
+        txtAr_Docente.setMargin(new java.awt.Insets(10, 10, 10, 10));
+        txtAr_Docente.setMinimumSize(new java.awt.Dimension(750, 110));
 
-        jLabel12.setFont(new java.awt.Font("Playball", 1, 24)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(70, 70, 70));
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("empleando Pilas y Colas”");
+        lbl_TituloP2.setFont(new java.awt.Font("Playball", 1, 24)); // NOI18N
+        lbl_TituloP2.setForeground(new java.awt.Color(70, 70, 70));
+        lbl_TituloP2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_TituloP2.setText("empleando Pilas y Colas”");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -128,21 +124,21 @@ public class pnl_Presentacion extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtArea_Enunciado1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtArea_Enunciado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lbl_Escuela, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbl_Docente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtAr_Docente, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_Ciclo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbl_TituloP1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbl_Integrantes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtAr_Integrantes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_Facultad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbl_UNS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbl_IngSistemas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbl_TituloP2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2))
+                    .addComponent(lbl_imgPila)
+                    .addComponent(lbl_imgCola))
                 .addGap(50, 50, 50))
         );
         layout.setVerticalGroup(
@@ -151,49 +147,49 @@ public class pnl_Presentacion extends javax.swing.JPanel {
                 .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                        .addComponent(lbl_imgCola)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel3))
+                        .addComponent(lbl_imgPila))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(lbl_UNS)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel4)
+                        .addComponent(lbl_Facultad)
                         .addGap(0, 0, 0)
-                        .addComponent(jLabel7)
+                        .addComponent(lbl_Escuela)
                         .addGap(0, 0, 0)
-                        .addComponent(jLabel9)
+                        .addComponent(lbl_IngSistemas)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel6)
+                        .addComponent(lbl_Ciclo)
                         .addGap(40, 40, 40)
-                        .addComponent(jLabel10)
+                        .addComponent(lbl_TituloP1)
                         .addGap(0, 0, 0)
-                        .addComponent(jLabel12)
+                        .addComponent(lbl_TituloP2)
                         .addGap(40, 40, 40)
-                        .addComponent(jLabel8)
+                        .addComponent(lbl_Integrantes)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtArea_Enunciado, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtAr_Integrantes, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
-                        .addComponent(jLabel11)
+                        .addComponent(lbl_Docente)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtArea_Enunciado1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtAr_Docente, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextArea txtArea_Enunciado;
-    private javax.swing.JTextArea txtArea_Enunciado1;
+    private javax.swing.JLabel lbl_Ciclo;
+    private javax.swing.JLabel lbl_Docente;
+    private javax.swing.JLabel lbl_Escuela;
+    private javax.swing.JLabel lbl_Facultad;
+    private javax.swing.JLabel lbl_IngSistemas;
+    private javax.swing.JLabel lbl_Integrantes;
+    private javax.swing.JLabel lbl_TituloP1;
+    private javax.swing.JLabel lbl_TituloP2;
+    private javax.swing.JLabel lbl_UNS;
+    private javax.swing.JLabel lbl_imgCola;
+    private javax.swing.JLabel lbl_imgPila;
+    private javax.swing.JTextArea txtAr_Docente;
+    private javax.swing.JTextArea txtAr_Integrantes;
     // End of variables declaration//GEN-END:variables
 }
