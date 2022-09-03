@@ -2,7 +2,7 @@ package paqueteproducto;
 
 import java.util.Scanner;
 
-public class MenuPrueba {
+public class MenuPrincipal {
 
     static Scanner input = new Scanner(System.in);
     static int FINAL = -1, FRENTE = -1, TOPE = -1, FONDO = -1, itr;

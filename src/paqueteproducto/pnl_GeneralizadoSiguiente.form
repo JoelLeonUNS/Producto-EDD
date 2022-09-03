@@ -49,20 +49,20 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="cbBx_Operador" min="-2" pref="100" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="btn_DefinirOperador" min="-2" pref="75" max="-2" attributes="0"/>
+                              <Component id="btn_DefinirOperador" min="-2" pref="80" max="-2" attributes="0"/>
                           </Group>
                           <Component id="lbl_TerminoOperador" min="-2" max="-2" attributes="0"/>
                           <Component id="lbl_TerminoExponente" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="txtFld_Exponente" min="-2" pref="100" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="btn_DefinirExponente" min="-2" pref="75" max="-2" attributes="0"/>
+                              <Component id="btn_DefinirExponente" min="-2" pref="80" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="txtArea_IndicacionOperador" min="-2" pref="193" max="-2" attributes="0"/>
+                          <Component id="txtArea_IndicacionOperador" alignment="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="185" max="32767" attributes="0"/>
+              <EmptySpace pref="180" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
