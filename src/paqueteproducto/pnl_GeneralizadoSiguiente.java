@@ -233,7 +233,7 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
 
         rdBtn_MO3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         rdBtn_MO3.setForeground(new java.awt.Color(80, 80, 80));
-        rdBtn_MO3.setText("Introducir por teclado los operadores.");
+        rdBtn_MO3.setText("Seleccionar los operadores desde la lista.");
         rdBtn_MO3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rdBtn_MO3ActionPerformed(evt);
@@ -251,7 +251,7 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
 
         rdBtn_ME2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         rdBtn_ME2.setForeground(new java.awt.Color(80, 80, 80));
-        rdBtn_ME2.setText("Introducir por teclado  los exponentes.");
+        rdBtn_ME2.setText("Introducir por teclado los exponentes.");
         rdBtn_ME2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rdBtn_ME2ActionPerformed(evt);
@@ -359,7 +359,6 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
                             .addComponent(rdBtn_MO2))
                         .addGap(80, 80, 80)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtArea_IndicacionExponente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbl_Exponente, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbl_Operador, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
@@ -372,7 +371,8 @@ public class pnl_GeneralizadoSiguiente extends javax.swing.JPanel {
                                 .addComponent(txtFld_Exponente, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(btn_DefinirExponente, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txtArea_IndicacionOperador, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
+                            .addComponent(txtArea_IndicacionOperador, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(txtArea_IndicacionExponente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
                 .addContainerGap(180, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(

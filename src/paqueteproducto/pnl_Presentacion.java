@@ -84,7 +84,7 @@ public class pnl_Presentacion extends javax.swing.JPanel {
         txtAr_Integrantes.setForeground(new java.awt.Color(80, 80, 80));
         txtAr_Integrantes.setLineWrap(true);
         txtAr_Integrantes.setRows(5);
-        txtAr_Integrantes.setText("Castillo Goicochea Angie Carolina\nGonzales Corzo Abner Jorge\nLeon Mondoñedo Joel\nTirado Mendoza Gilmer Alexander");
+        txtAr_Integrantes.setText("•   Castillo Goicochea Angie Carolina\n•   Gonzales Corzo Abner Jorge\n•   Leon Mondoñedo Joel\n•   Tirado Mendoza Gilmer Alexander");
         txtAr_Integrantes.setWrapStyleWord(true);
         txtAr_Integrantes.setAutoscrolls(false);
         txtAr_Integrantes.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -104,7 +104,7 @@ public class pnl_Presentacion extends javax.swing.JPanel {
         txtAr_Docente.setForeground(new java.awt.Color(80, 80, 80));
         txtAr_Docente.setLineWrap(true);
         txtAr_Docente.setRows(5);
-        txtAr_Docente.setText("Dr. Hugo Esteban Caselli Gismondi");
+        txtAr_Docente.setText("•   Dr. Hugo Esteban Caselli Gismondi");
         txtAr_Docente.setWrapStyleWord(true);
         txtAr_Docente.setAutoscrolls(false);
         txtAr_Docente.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
