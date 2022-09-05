@@ -1,9 +1,5 @@
 package paqueteproducto;
 
-/**
- *
- * @author USUARIO
- */
 public class pnl_Presentacion extends javax.swing.JPanel {
 
     /**

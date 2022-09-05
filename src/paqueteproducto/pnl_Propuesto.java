@@ -1,11 +1,8 @@
 package paqueteproducto;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.Scanner;
 import javax.swing.JTable;
 import javax.swing.SwingConstants;
-import javax.swing.Timer;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
